@@ -1,0 +1,11 @@
+
+
+matrixS
+getMatrixH
+getArrayF
+TestModelQPData
+TestModelQP cost fcn för olka u värden
+
+
+
+

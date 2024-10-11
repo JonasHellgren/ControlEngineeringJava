@@ -5,6 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/MatrixStacking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/qp_problem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/stMatrixes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/st_for2horizon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQPData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/TestMatrixStacking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/java_common/TestCommon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,9 +25,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "JonasHellgren"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JonasHellgren/ControlEngineeringJava.git",
+    "accountId": "97ea88b1-39a1-4d6b-8a23-c244fe6dfb34"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -26,13 +59,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.TestCommon.executor": "Run",
+    "JUnit.TestMatrixStacking.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/JavaCode/JavaCommon",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestMatrixStacking">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="ControlEngineeringJava" />
@@ -46,8 +86,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCommon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java_common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java_common" />
+      <option name="MAIN_CLASS_NAME" value="java_common.TestCommon" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMatrixStacking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="helpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="helpers" />
+      <option name="MAIN_CLASS_NAME" value="helpers.TestMatrixStacking" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMatrixStacking.testStackVertically_SingleMatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="helpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="helpers" />
+      <option name="MAIN_CLASS_NAME" value="helpers.TestMatrixStacking" />
+      <option name="METHOD_NAME" value="testStackVertically_SingleMatrix" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestMatrixStacking" />
+        <item itemvalue="JUnit.TestMatrixStacking.testStackVertically_SingleMatrix" />
+        <item itemvalue="JUnit.TestCommon" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
