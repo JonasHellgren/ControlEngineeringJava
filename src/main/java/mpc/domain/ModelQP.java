@@ -1,4 +1,4 @@
-package mpc.one_dim_integrator;
+package mpc.domain;
 
 import com.google.common.base.Preconditions;
 import com.joptimizer.functions.ConvexMultivariateRealFunction;

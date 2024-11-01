@@ -1,6 +1,8 @@
 
 
-matrixS
+matrixS x
+Test1dIntegratorModelData x
+matrixT x
 getMatrixH
 getArrayF
 TestModelQPData

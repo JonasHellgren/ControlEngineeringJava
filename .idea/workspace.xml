@@ -5,20 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/MatrixStacking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/qp_problem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/stMatrixes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/st_for2horizon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQPData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/TestMatrixStacking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/java_common/TestCommon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/QandR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/one_dim_integrator.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/MatrixDataFactoryOneDimIntegrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/Test1dIntegratorModelData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/table_saver/TableToImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MyMatrixUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/pics/table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/runners/RunnerSaveTableAsFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TODO/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/ModelQP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/one_dim_integrator/ModelQPData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/ModelQPData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/file_io/PathAndFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/file_io/PathAndFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/gradient/NormalDistributionGradientCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/gradient/NormalDistributionGradientCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/linear_regression_batch_fitting/LinearBatchFitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/linear_regression_batch_fitting/LinearBatchFitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/list_arrays/MyArrayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/list_arrays/MyArrayUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,21 +43,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "JonasHellgren"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JonasHellgren&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JonasHellgren/ControlEngineeringJava.git",
-    "accountId": "97ea88b1-39a1-4d6b-8a23-c244fe6dfb34"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JonasHellgren/ControlEngineeringJava.git&quot;,
+    &quot;accountId&quot;: &quot;97ea88b1-39a1-4d6b-8a23-c244fe6dfb34&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2nHhUfoxObKD4V6U6GBKLfcVpep" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,6 +67,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.Test1dIntegratorModelData.executor": "Run",
+    "JUnit.Test1dIntegratorModelData.whenMatrixS_thenCorrect.executor": "Run",
+    "JUnit.Test1dIntegratorModelData.whenMatrixT_thenCorrect.executor": "Run",
     "JUnit.TestCommon.executor": "Run",
     "JUnit.TestMatrixStacking.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -69,34 +79,57 @@
     "last_opened_file_path": "C:/JavaCode/JavaCommon",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editing.templates"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestMatrixStacking">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <component name="RunManager" selected="JUnit.Test1dIntegratorModelData.whenMatrixT_thenCorrect">
+    <configuration name="Test1dIntegratorModelData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.Test1dIntegratorModelData" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCommon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test1dIntegratorModelData.whenMatrixS_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="java_common.*" />
+          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="java_common" />
-      <option name="MAIN_CLASS_NAME" value="java_common.TestCommon" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.Test1dIntegratorModelData" />
+      <option name="METHOD_NAME" value="whenMatrixS_thenCorrect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test1dIntegratorModelData.whenMatrixT_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.Test1dIntegratorModelData" />
+      <option name="METHOD_NAME" value="whenMatrixT_thenCorrect" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,10 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test1dIntegratorModelData.whenMatrixT_thenCorrect" />
+        <item itemvalue="JUnit.Test1dIntegratorModelData.whenMatrixS_thenCorrect" />
+        <item itemvalue="JUnit.Test1dIntegratorModelData" />
         <item itemvalue="JUnit.TestMatrixStacking" />
         <item itemvalue="JUnit.TestMatrixStacking.testStackVertically_SingleMatrix" />
-        <item itemvalue="JUnit.TestCommon" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
