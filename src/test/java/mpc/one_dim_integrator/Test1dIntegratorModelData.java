@@ -19,32 +19,48 @@ class Test1dIntegratorModelData {
     RealMatrix a;
     RealVector b;
 
-     @BeforeEach
-      void init() {
-        model=MatrixDataFactoryOneDimIntegrator.createModelData();
-        a=ModelQPData.getRealMatrix(model.matrixA());
-        b=ModelQPData.getRealVector(model.vectorB());
+    @BeforeEach
+    void init() {
+        model = MatrixDataFactoryOneDimIntegrator.createModelData();
+        a = ModelQPData.getRealMatrix(model.matrixA());
+        b = ModelQPData.getRealVector(model.vectorB());
+    }
 
-      }
+    @Test
+    void givenModel_whenHorizon_then2() {
+        assertEquals(2, model.horizon());
+    }
 
-       @Test
-        void givenModel_whenHorizon_then2t() {
-            assertEquals(2,model.horizon());
-        }
+    @Test
+    void givenModel_whenNStates_then1() {
+        assertEquals(2, model.nStates());
+    }
 
-       @Test
-        void whenMatrixS_thenCorrect() {
-           var aStacked=MatrixStacking.stackVertically(List.of(a,a));
-           assertEquals(aStacked,model.matrixS());
-        }
+    @Test
+    void whenMatrixS_thenCorrect() {
+        var aStacked = MatrixStacking.stackVertically(List.of(a, a));
+        assertEquals(aStacked, model.matrixS());
+    }
 
-     @Test
-      void whenMatrixT_thenCorrect() {
-         RealVector zeroVector = MyMatrixUtils.createZeroVector(model.nStates());
-         var row1=MyMatrixUtils.stackVectorsHorizontally(List.of(b, zeroVector));
-         var row2=MyMatrixUtils.stackVectorsHorizontally(List.of(a.operate(b),b));
-         var m=MatrixStacking.stackVertically(List.of(row1,row2));
-         assertEquals(m,model.matrixT());
-      }
+    @Test
+    void whenMatrixT_thenCorrect() {
+        RealVector zeroVector = MyMatrixUtils.createZeroVector(model.nStates());
+        var row1 = MyMatrixUtils.stackVectorsHorizontally(List.of(b, zeroVector));
+        var row2 = MyMatrixUtils.stackVectorsHorizontally(List.of(a.operate(b), b));
+        var m = MatrixStacking.stackVertically(List.of(row1, row2));
+        System.out.println("m = " + m);
+        assertEquals(m, model.matrixT());
+    }
+
+    @Test
+    void whenMatrixH_thenCorrect() {
+        var h = model.getMatrixH();
+        System.out.println("h = " + h);
+
+    }
+
+    @Test
+    void whenMatrixF_thenCorrect() {
+    }
 
 }

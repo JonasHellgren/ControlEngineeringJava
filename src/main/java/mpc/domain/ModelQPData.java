@@ -16,7 +16,7 @@ public record ModelQPData(
         double[][] matrixA,
         double[] vectorB,
         double[][] matrixQ,
-        double[] vectorR
+        double[][] matrixR
 ) {
     public boolean isOk() {
         return matrixA != null && vectorB != null;
@@ -69,8 +69,19 @@ public record ModelQPData(
     }
 
 
-    public double[][] getMatrixH() {
-        return matrixA;
+    public RealMatrix getMatrixH() {
+        var t=matrixT();
+        var q=getRealMatrix(matrixQ);
+        var r=getRealMatrix(matrixR);
+
+        System.out.println("t = " + t);
+        System.out.println("q = " + q);
+        System.out.println("r = " + r);
+
+        System.out.println("t.transpose().multiply(q) = " + t.transpose().multiply(q));
+        System.out.println("t.multiply(q) = " + t.multiply(q));
+
+        return (t.transpose().multiply(q).multiply(t).add(r)).scalarMultiply(2);
     }
 
     public double[] getArrayF() {

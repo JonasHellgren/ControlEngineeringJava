@@ -12,11 +12,14 @@ public class ModelQP {
 
     ModelQPData modelData;
 
+/*
     public ConvexMultivariateRealFunction costFunction() {
         Preconditions.checkArgument(modelData.isOk(), "modelData not ok");
         return new PDQuadraticMultivariateRealFunction(
-                modelData.getMatrixH(), modelData.getArrayF(), 0);
+                //modelData.getMatrixH(), modelData.getArrayF(), 0);
+               // modelData.getArrayF(), modelData.getArrayF(), 0);
     }
+*/
 
     /**
      * Returns an array of constraints for the quadratic programming problem.

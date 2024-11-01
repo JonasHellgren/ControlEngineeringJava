@@ -4,7 +4,10 @@ matrixS x
 Test1dIntegratorModelData x
 matrixT x
 getMatrixH
+whenMatrixH_thenCorrect
 getArrayF
+whenMatrixF_thenCorrect
+TestStateResponseVersusUVector1dIntegrator
 TestModelQPData
 TestModelQP cost fcn för olka u värden
 
