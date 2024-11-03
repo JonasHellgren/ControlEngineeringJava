@@ -10,6 +10,7 @@ import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 import java.util.List;
 
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
+import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
 public record ModelQPData(
         int horizon,
@@ -19,7 +20,15 @@ public record ModelQPData(
         double[][] matrixR
 ) {
     public boolean isOk() {
-        return matrixA != null && vectorB != null;
+        var a = getRealMatrix(matrixA);
+        var q = getRealMatrix(matrixQ);
+        var r = getRealMatrix(matrixR);
+        int nStates = nStates();
+        System.out.println("properties(q) = " + properties(q));
+        return properties(a).nRows() == nStates && properties(a).nColumns() == nStates &&
+                properties(q).nRows() == nStates * horizon && properties(q).nColumns() == nStates * horizon &&
+                properties(r).nRows() == horizon && properties(r).nColumns() == horizon
+                ;
     }
 
     public static double[][] matrixSAsArray(RealMatrix m) {
@@ -51,17 +60,16 @@ public record ModelQPData(
     public RealMatrix matrixT() {
         var a = getRealMatrix(matrixA);
         var b = getRealVector(vectorB);
-        int n= nStates();
+        int n = nStates();
         List<RealMatrix> matrices = Lists.newArrayList();
         for (int i = 0; i < horizon; i++) {
             List<RealVector> vectors = Lists.newArrayList();
             for (int j = 0; j < horizon; j++) {
-                RealVector m = i-j<0
+                RealVector m = i - j < 0
                         ? createZeroVector(n)
-                        : a.power(i-j).operate(b);
+                        : a.power(i - j).operate(b);
                 vectors.add(m);
             }
-            System.out.println("vectors = " + vectors);
             RealMatrix row = MyMatrixUtils.stackVectorsHorizontally(vectors);
             matrices.add(row);
         }
@@ -70,16 +78,19 @@ public record ModelQPData(
 
 
     public RealMatrix getMatrixH() {
-        var t=matrixT();
-        var q=getRealMatrix(matrixQ);
-        var r=getRealMatrix(matrixR);
+        var t = matrixT();
+        var q = getRealMatrix(matrixQ);
+        var r = getRealMatrix(matrixR);
 
         System.out.println("t = " + t);
         System.out.println("q = " + q);
         System.out.println("r = " + r);
 
+        System.out.println("MyMatrixUtils.properties(t) = " + properties(t));
+
         System.out.println("t.transpose().multiply(q) = " + t.transpose().multiply(q));
         System.out.println("t.multiply(q) = " + t.multiply(q));
+        System.out.println("t.transpose().multiply(q).multiply(t) = " + t.transpose().multiply(q).multiply(t));
 
         return (t.transpose().multiply(q).multiply(t).add(r)).scalarMultiply(2);
     }

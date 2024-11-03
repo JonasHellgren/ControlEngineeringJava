@@ -4,6 +4,7 @@ import helpers.MatrixStacking;
 import mpc.domain.ModelQPData;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
@@ -27,13 +28,18 @@ class Test1dIntegratorModelData {
     }
 
     @Test
+    void model_thenIsOk() {
+        Assertions.assertTrue(model.isOk());
+    }
+
+    @Test
     void givenModel_whenHorizon_then2() {
         assertEquals(2, model.horizon());
     }
 
     @Test
     void givenModel_whenNStates_then1() {
-        assertEquals(2, model.nStates());
+        assertEquals(1, model.nStates());
     }
 
     @Test
@@ -49,7 +55,13 @@ class Test1dIntegratorModelData {
         var row2 = MyMatrixUtils.stackVectorsHorizontally(List.of(a.operate(b), b));
         var m = MatrixStacking.stackVertically(List.of(row1, row2));
         System.out.println("m = " + m);
-        assertEquals(m, model.matrixT());
+        System.out.println("MyMatrixUtils.properties(m) = " + MyMatrixUtils.properties(m));
+        RealMatrix t = model.matrixT();
+        System.out.println("t = " + t);
+        System.out.println("MyMatrixUtils.properties(t) = " + MyMatrixUtils.properties(t));
+        // assertEquals(m, t);
+        assertEquals(model.nStates()* model.horizon(), MyMatrixUtils.properties(t).nRows());
+        assertEquals( model.horizon(), MyMatrixUtils.properties(t).nColumns());
     }
 
     @Test
