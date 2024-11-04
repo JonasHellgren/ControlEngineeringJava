@@ -1,8 +1,7 @@
 package mpc.domain;
 
-import com.google.common.base.Preconditions;
 import com.joptimizer.functions.ConvexMultivariateRealFunction;
-import com.joptimizer.functions.PDQuadraticMultivariateRealFunction;
+import mpc.domain.value_objects.MPCModelData;
 
 /**
  *  * min   x'Qx+kx
@@ -10,7 +9,7 @@ import com.joptimizer.functions.PDQuadraticMultivariateRealFunction;
 
 public class ModelQP {
 
-    ModelQPData modelData;
+    MPCModelData modelData;
 
 /*
     public ConvexMultivariateRealFunction costFunction() {
