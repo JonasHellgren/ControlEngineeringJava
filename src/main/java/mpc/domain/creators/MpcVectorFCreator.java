@@ -3,6 +3,7 @@ package mpc.domain.creators;
 import lombok.AllArgsConstructor;
 import mpc.domain.value_objects.MPCModelData;
 import mpc.domain.value_objects.MpcMatrices;
+import mpc.domain.value_objects.StatePresentAndReference;
 import org.apache.commons.math3.linear.RealVector;
 import org.hellgren.utilities.list_arrays.ListCreator;
 import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
@@ -15,6 +16,12 @@ public class MpcVectorFCreator {
 
     MPCModelData modelData;
     MpcMatrices matrices;
+
+
+    public RealVector vectorFSameXrefEveryStep(StatePresentAndReference statePresentAndReference) {
+        return vectorFSameXrefEveryStep(statePresentAndReference.x(), statePresentAndReference.xRef());
+    }
+
 
     public RealVector vectorFSameXrefEveryStep(RealVector x, RealVector xRef0) {
         checkArgument(x.getDimension() == modelData.nStates());
@@ -30,7 +37,7 @@ public class MpcVectorFCreator {
         var t = matrices.T();
         var q = matrices.Q();
         var s = matrices.S();
-        return t.transpose().multiply(q).operate(s.operate(x).subtract(xRef));
+        return t.transpose().multiply(q).operate(s.operate(x).subtract(xRef)).mapMultiply(2);
     }
 
 }

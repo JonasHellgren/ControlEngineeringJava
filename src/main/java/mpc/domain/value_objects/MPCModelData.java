@@ -1,5 +1,6 @@
 package mpc.domain.value_objects;
 
+import lombok.With;
 import org.apache.commons.math3.linear.MatrixUtils;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
@@ -7,8 +8,8 @@ public record MPCModelData(
         int horizon,
         double[][] matrixA,
         double[] vectorB,
-        double[] statePenalty,
-        double[] controlPenalty
+        @With double[] statePenalty,
+        @With double[] controlPenalty
 ) {
 
     public static final int N_INPUTS = 1;

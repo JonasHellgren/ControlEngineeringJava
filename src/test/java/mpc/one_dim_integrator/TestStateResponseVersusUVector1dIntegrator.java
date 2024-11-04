@@ -11,11 +11,8 @@ import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createOnesVect
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
 
 class TestResponseCalculator1dIntegrator {
-
-
     MPCModelData model;
     ResponseCalculator calculator;
-
 
     @BeforeEach
     void init() {

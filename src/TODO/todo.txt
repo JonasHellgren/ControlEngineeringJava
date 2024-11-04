@@ -7,11 +7,13 @@ getMatrixH x
 whenMatrixH_thenCorrect x
 getArrayF  x
 whenMatrixF_thenCorrect x
-ny arkitektur- ModelData  MPCMatrixCalculator   MPCController
+ny arkitektur- ModelData  MPCMatrixCalculator   MPCController x
+TestResponseCalculator1dIntegrator x
 
-
-TestResponseCalculator1dIntegrator
 TestModelQPData
+
+TestCostCalculator1dIntegrator
+
 TestModelQP cost fcn för olka u värden
 
 
