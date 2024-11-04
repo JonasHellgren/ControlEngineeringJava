@@ -1,4 +1,4 @@
-package mpc.domain.calculators;
+package mpc.domain.creators;
 
 import lombok.AllArgsConstructor;
 import mpc.domain.value_objects.MPCModelData;
@@ -11,7 +11,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 
 @AllArgsConstructor
-public class MpcVectorFCalculator {
+public class MpcVectorFCreator {
 
     MPCModelData modelData;
     MpcMatrices matrices;

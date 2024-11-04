@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/MpcVectorFCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/ResponseCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestStateResponseVersusUVector1dIntegrator.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/table_saver/TableToImage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MyMatrixUtils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/pics/table.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/runners/RunnerSaveTableAsFigure.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/test/java/utilities/TestMyMatrixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/MPCMatrixCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/MpcMatrixCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMPCMatrixCalculator1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCalculator1DIntegrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TODO/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/MpcMatrixCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcMatrixCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/MpcVectorFCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcVectorFCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCalculator1DIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCreator1DIntegrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" afterDir="false" />
@@ -81,6 +84,8 @@
     "JUnit.TestModelData1dIntegrator.executor": "Run",
     "JUnit.TestMpcMatrixCalculator1DIntegrator.executor": "Run",
     "JUnit.TestMyMatrixUtils.executor": "Run",
+    "JUnit.TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect.executor": "Run",
+    "JUnit.one_dim_integrator in ControlEngineeringJava.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
@@ -92,8 +97,8 @@
     "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestMpcMatrixCalculator1DIntegrator">
-    <configuration name="TestModelData1dIntegrator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestResponseCalculator1dIntegrator">
+    <configuration name="TestResponseCalculator1dIntegrator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -103,13 +108,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestModelData1dIntegrator" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestResponseCalculator1dIntegrator" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMpcMatrixCalculator1DIntegrator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponseCalculator1dIntegrator.whenControlInoutIsZero_thenCorrectResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -119,30 +124,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcMatrixCalculator1DIntegrator" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMpcMatrixCalculator1DIntegrator.whenMatrixF_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ControlEngineeringJava" />
-      <shortenClasspath name="ARGS_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcMatrixCalculator1DIntegrator" />
-      <option name="METHOD_NAME" value="whenMatrixF_thenCorrect" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestResponseCalculator1dIntegrator" />
+      <option name="METHOD_NAME" value="whenControlInoutIsZero_thenCorrectResponse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMpcMatrixCalculator1DIntegrator.whenMatrixH_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponseCalculator1dIntegrator.whenControlInputIsOne_thenCorrectResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -152,14 +141,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcMatrixCalculator1DIntegrator" />
-      <option name="METHOD_NAME" value="whenMatrixH_thenCorrect" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestResponseCalculator1dIntegrator" />
+      <option name="METHOD_NAME" value="whenControlInputIsOne_thenCorrectResponse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMpcMatrixCalculator1DIntegrator.whenMatrixQ_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -169,8 +158,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcMatrixCalculator1DIntegrator" />
-      <option name="METHOD_NAME" value="whenMatrixQ_thenCorrect" />
+      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestResponseCalculator1dIntegrator" />
+      <option name="METHOD_NAME" value="whenMatrixS_thenCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,13 +172,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="one_dim_integrator in ControlEngineeringJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestMpcMatrixCalculator1DIntegrator" />
-        <item itemvalue="JUnit.TestMpcMatrixCalculator1DIntegrator.whenMatrixF_thenCorrect" />
-        <item itemvalue="JUnit.TestMpcMatrixCalculator1DIntegrator.whenMatrixQ_thenCorrect" />
-        <item itemvalue="JUnit.TestMpcMatrixCalculator1DIntegrator.whenMatrixH_thenCorrect" />
-        <item itemvalue="JUnit.TestModelData1dIntegrator" />
+        <item itemvalue="JUnit.TestResponseCalculator1dIntegrator" />
+        <item itemvalue="JUnit.TestResponseCalculator1dIntegrator.whenControlInputIsOne_thenCorrectResponse" />
+        <item itemvalue="JUnit.TestResponseCalculator1dIntegrator.whenControlInoutIsZero_thenCorrectResponse" />
+        <item itemvalue="JUnit.TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect" />
+        <item itemvalue="JUnit.one_dim_integrator in ControlEngineeringJava" />
       </list>
     </recent_temporary>
   </component>

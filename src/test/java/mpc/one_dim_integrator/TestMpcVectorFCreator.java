@@ -1,7 +1,7 @@
 package mpc.one_dim_integrator;
 
-import mpc.domain.MpcMatrixCalculator;
-import mpc.domain.calculators.MpcVectorFCalculator;
+import mpc.domain.creators.MpcMatrixCreator;
+import mpc.domain.creators.MpcVectorFCreator;
 import mpc.domain.value_objects.MPCModelData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,16 +9,16 @@ import org.junit.jupiter.api.Test;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMpcVectorFCalculator {
+public class TestMpcVectorFCreator {
 
     MPCModelData model;
-    MpcVectorFCalculator calculator;
+    MpcVectorFCreator calculator;
 
     @BeforeEach
     void init() {
         model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
-        var matrixes= new MpcMatrixCalculator(model).getMpcMatrixes();
-        calculator = new MpcVectorFCalculator(model, matrixes); }
+        var matrixes= new MpcMatrixCreator(model).getMpcMatrices();
+        calculator = new MpcVectorFCreator(model, matrixes); }
 
 
     @Test

@@ -1,4 +1,4 @@
-package mpc.domain;
+package mpc.domain.creators;
 
 import com.google.common.collect.Lists;
 import helpers.MatrixStacking;
@@ -16,11 +16,11 @@ import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVect
 
 @AllArgsConstructor
 @Getter
-public class MpcMatrixCalculator {
+public class MpcMatrixCreator {
 
     MPCModelData modelData;
 
-    public MpcMatrices getMpcMatrixes() {
+    public MpcMatrices getMpcMatrices() {
         return   MpcMatrices.builder()
                 .S(matrixS())
                 .T(matrixT())

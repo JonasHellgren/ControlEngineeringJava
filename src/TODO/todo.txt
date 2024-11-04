@@ -10,7 +10,7 @@ whenMatrixF_thenCorrect x
 ny arkitektur- ModelData  MPCMatrixCalculator   MPCController
 
 
-TestStateResponseVersusUVector1dIntegrator
+TestResponseCalculator1dIntegrator
 TestModelQPData
 TestModelQP cost fcn för olka u värden
 

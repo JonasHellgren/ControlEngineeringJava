@@ -1,7 +1,7 @@
 package mpc.one_dim_integrator;
 
 import helpers.MatrixStacking;
-import mpc.domain.MpcMatrixCalculator;
+import mpc.domain.creators.MpcMatrixCreator;
 import mpc.domain.value_objects.MPCModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import org.apache.commons.math3.linear.MatrixUtils;
@@ -16,10 +16,9 @@ import java.util.List;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TestMpcMatrixCalculator1DIntegrator {
+class TestMpcMatrixCreator1DIntegrator {
 
     MPCModelData model;
-    MpcMatrixCalculator calculator;
     RealMatrix a;
     RealVector b;
     MpcMatrices mpcMatrices;
@@ -27,8 +26,7 @@ class TestMpcMatrixCalculator1DIntegrator {
     @BeforeEach
     void init() {
         model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
-        calculator = new MpcMatrixCalculator(model);
-        mpcMatrices = calculator.getMpcMatrixes();
+        mpcMatrices = new MpcMatrixCreator(model).getMpcMatrices();
         a = MatrixUtils.createRealMatrix(model.matrixA());
         b = MatrixUtils.createRealVector((model.vectorB()));
     }
