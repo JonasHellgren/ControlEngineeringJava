@@ -5,6 +5,8 @@ import helpers.MatrixStacking;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
+import org.hellgren.utilities.list_arrays.ArrayCreator;
+import org.hellgren.utilities.list_arrays.MyArrayUtil;
 import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 
 import java.util.List;
@@ -16,25 +18,19 @@ public record ModelQPData(
         int horizon,
         double[][] matrixA,
         double[] vectorB,
-        double[][] matrixQ,
-        double[][] matrixR
+        double[] statePenalty,
+        double[] controlPenalty
 ) {
     public boolean isOk() {
         var a = getRealMatrix(matrixA);
-        var q = getRealMatrix(matrixQ);
-        var r = getRealMatrix(matrixR);
+        var q = matrixQ();
+        var r = matrixR();
         int nStates = nStates();
-        System.out.println("properties(q) = " + properties(q));
         return properties(a).nRows() == nStates && properties(a).nColumns() == nStates &&
                 properties(q).nRows() == nStates * horizon && properties(q).nColumns() == nStates * horizon &&
                 properties(r).nRows() == horizon && properties(r).nColumns() == horizon
                 ;
     }
-
-    public static double[][] matrixSAsArray(RealMatrix m) {
-        return m.getData();
-    }
-
 
     public int nStates() {
         return vectorB.length;
@@ -46,6 +42,16 @@ public record ModelQPData(
 
     public static RealVector getRealVector(double[] vector) {
         return MatrixUtils.createRealVector(vector);
+    }
+
+    public RealMatrix matrixQ() {
+          double[] diagonal = ArrayCreator.duplicate(statePenalty, horizon);
+           return MyMatrixUtils.createDiagonalMatrix(diagonal);
+    }
+
+    public RealMatrix matrixR() {
+        double[] diagonal = ArrayCreator.duplicate(controlPenalty, horizon);
+        return MyMatrixUtils.createDiagonalMatrix(diagonal);
     }
 
     public RealMatrix matrixS() {
@@ -61,7 +67,7 @@ public record ModelQPData(
         var a = getRealMatrix(matrixA);
         var b = getRealVector(vectorB);
         int n = nStates();
-        List<RealMatrix> matrices = Lists.newArrayList();
+        List<RealMatrix> rows = Lists.newArrayList();
         for (int i = 0; i < horizon; i++) {
             List<RealVector> vectors = Lists.newArrayList();
             for (int j = 0; j < horizon; j++) {
@@ -71,27 +77,16 @@ public record ModelQPData(
                 vectors.add(m);
             }
             RealMatrix row = MyMatrixUtils.stackVectorsHorizontally(vectors);
-            matrices.add(row);
+            rows.add(row);
         }
-        return MatrixStacking.stackVertically(matrices);
+        return MatrixStacking.stackVertically(rows);
     }
 
 
     public RealMatrix getMatrixH() {
         var t = matrixT();
-        var q = getRealMatrix(matrixQ);
-        var r = getRealMatrix(matrixR);
-
-        System.out.println("t = " + t);
-        System.out.println("q = " + q);
-        System.out.println("r = " + r);
-
-        System.out.println("MyMatrixUtils.properties(t) = " + properties(t));
-
-        System.out.println("t.transpose().multiply(q) = " + t.transpose().multiply(q));
-        System.out.println("t.multiply(q) = " + t.multiply(q));
-        System.out.println("t.transpose().multiply(q).multiply(t) = " + t.transpose().multiply(q).multiply(t));
-
+        var q = matrixQ();
+        var r = matrixR();
         return (t.transpose().multiply(q).multiply(t).add(r)).scalarMultiply(2);
     }
 

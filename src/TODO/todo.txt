@@ -3,10 +3,13 @@
 matrixS x
 Test1dIntegratorModelData x
 matrixT x
-getMatrixH
-whenMatrixH_thenCorrect
-getArrayF
-whenMatrixF_thenCorrect
+getMatrixH x
+whenMatrixH_thenCorrect x
+getArrayF  x
+whenMatrixF_thenCorrect x
+ny arkitektur- ModelData  MPCMatrixCalculator   MPCController
+
+
 TestStateResponseVersusUVector1dIntegrator
 TestModelQPData
 TestModelQP cost fcn för olka u värden
