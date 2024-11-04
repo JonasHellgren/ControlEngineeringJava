@@ -1,7 +1,7 @@
 package mpc.domain.creators;
 
 import lombok.AllArgsConstructor;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.apache.commons.math3.linear.RealVector;
@@ -14,10 +14,10 @@ import static com.google.common.base.Preconditions.checkArgument;
 @AllArgsConstructor
 public class MpcVectorFCreator {
 
-    MPCModelData modelData;
+    MpcModelData modelData;
     MpcMatrices matrices;
 
-    public static MpcVectorFCreator of(MPCModelData modelData, MpcMatrices matrices) {
+    public static MpcVectorFCreator of(MpcModelData modelData, MpcMatrices matrices) {
         return new MpcVectorFCreator(modelData, matrices);
     }
 
@@ -28,7 +28,7 @@ public class MpcVectorFCreator {
 
     public RealVector vectorFSameXrefEveryStep(RealVector x, RealVector xRef0) {
         checkArgument(x.getDimension() == modelData.nStates());
-        checkArgument(x.getDimension() == modelData.nStates());
+        checkArgument(xRef0.getDimension() == modelData.horizon());
         var vectors = ListCreator.nCopiesMutable(xRef0, modelData.horizon());
         var vector = MyMatrixUtils.stackVectorsHorizontallyToVector(vectors);
         return vectorF(x, vector);

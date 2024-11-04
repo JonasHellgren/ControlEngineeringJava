@@ -6,9 +6,10 @@ import mpc.domain.controller.ModelQP;
 import mpc.domain.calculators.ResponseCalculator;
 import mpc.domain.controller.MpcController;
 import mpc.domain.creators.MpcMatrixCreator;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
+import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealVector;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,7 @@ class TestMpcController1dIntegrator {
     static final int HORIZON_4 = 4;
     static final int CONTROL_PENALTY_ZERO = 0;
 
-    MPCModelData model;
+    MpcModelData model;
     MpcMatrices mpcMatrices;
     MpcController controller;
     ModelQP modelQP;

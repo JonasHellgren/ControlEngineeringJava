@@ -2,17 +2,17 @@ package mpc.domain.calculators;
 
 import com.google.common.base.Preconditions;
 import lombok.AllArgsConstructor;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import org.apache.commons.math3.linear.RealVector;
 
 @AllArgsConstructor
 public class ResponseCalculator {
 
-    MPCModelData model;
+    MpcModelData model;
     MpcMatrices matrices;
 
-    public static ResponseCalculator of(MPCModelData model, MpcMatrices matrices) {
+    public static ResponseCalculator of(MpcModelData model, MpcMatrices matrices) {
         return new ResponseCalculator(model, matrices);
     }
 

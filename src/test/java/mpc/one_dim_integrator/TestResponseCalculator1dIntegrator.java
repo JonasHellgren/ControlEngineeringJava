@@ -2,16 +2,18 @@ package mpc.one_dim_integrator;
 
 import mpc.domain.calculators.ResponseCalculator;
 import mpc.domain.creators.MpcMatrixCreator;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
+import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createOnesVector;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
 
 class TestResponseCalculator1dIntegrator {
-    MPCModelData model;
+    MpcModelData model;
     ResponseCalculator calculator;
 
     @BeforeEach

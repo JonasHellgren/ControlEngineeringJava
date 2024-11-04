@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.NonNull;
 import lombok.Setter;
 import mpc.domain.creators.MpcVectorFCreator;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.hellgren.utilities.joptimizer.UpperBoundConstraint;
@@ -19,14 +19,14 @@ import org.nd4j.shade.guava.base.Preconditions;
 @NonNull
 public class ModelQP {
 
-    MPCModelData modelData;
+    MpcModelData modelData;
     MpcMatrices matrices;
     MpcVectorFCreator vectorFCreator;
     @Setter
     private double upperBound;
 
     @Builder
-    public ModelQP(MPCModelData modelData, MpcMatrices matrices, double upperBound) {
+    public ModelQP(MpcModelData modelData, MpcMatrices matrices, double upperBound) {
         this.modelData = modelData;
         this.matrices = matrices;
         this.upperBound = upperBound;

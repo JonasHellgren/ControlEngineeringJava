@@ -2,7 +2,8 @@ package mpc.one_dim_integrator;
 
 import mpc.domain.creators.MpcMatrixCreator;
 import mpc.domain.creators.MpcVectorFCreator;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
+import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,12 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMpcVectorFCreator {
 
-    MPCModelData model;
+    public static final int HORIZON = 2;
+    MpcModelData model;
     MpcVectorFCreator calculator;
 
     @BeforeEach
     void init() {
-        model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
+        model = MatrixDataFactoryOneDimIntegrator.createModelData(HORIZON);
         var matrices= MpcMatrixCreator.of(model).createMatrices();
         calculator = MpcVectorFCreator.of(model, matrices);
     }
@@ -24,7 +26,7 @@ public class TestMpcVectorFCreator {
 
     @Test
     void whenMatrixF_thenCorrect() {
-        var f=calculator.vectorFSameXrefEveryStep(createZeroVector(1),createOnesVector(1));
+        var f=calculator.vectorFSameXrefEveryStep(createZeroVector(1),createOnesVector(HORIZON));
         assertEquals( model.horizon(), properties(f).nRows());
         assertEquals( 1, properties(f).nColumns());
     }

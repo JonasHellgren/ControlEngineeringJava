@@ -1,6 +1,7 @@
 package mpc.one_dim_integrator;
 
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
+import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TestModelData1dIntegrator {
 
     public static final int HORIZON = 2;
-    MPCModelData model;
+    MpcModelData model;
     RealMatrix a;
     RealVector b;
 

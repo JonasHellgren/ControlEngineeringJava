@@ -4,7 +4,7 @@ import lombok.With;
 import org.apache.commons.math3.linear.MatrixUtils;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
-public record MPCModelData(
+public record MpcModelData(
         int horizon,
         double[][] matrixA,
         double[] vectorB,

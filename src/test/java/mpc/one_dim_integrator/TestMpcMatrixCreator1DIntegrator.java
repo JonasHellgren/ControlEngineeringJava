@@ -2,23 +2,22 @@ package mpc.one_dim_integrator;
 
 import helpers.MatrixStacking;
 import mpc.domain.creators.MpcMatrixCreator;
-import mpc.domain.value_objects.MPCModelData;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
+import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
 import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestMpcMatrixCreator1DIntegrator {
 
-    MPCModelData model;
+    MpcModelData model;
     RealMatrix a;
     RealVector b;
     MpcMatrices mpcMatrices;

@@ -3,37 +3,46 @@ package mpc.domain.controller;
 import com.joptimizer.exception.JOptimizerException;
 import com.joptimizer.optimizers.JOptimizer;
 import com.joptimizer.optimizers.OptimizationRequest;
-import lombok.AllArgsConstructor;
-import mpc.domain.value_objects.MPCModelData;
+import lombok.NonNull;
+import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.hellgren.utilities.list_arrays.ArrayCreator;
 
-@AllArgsConstructor
 public class MpcController {
 
-    MPCModelData modelData;
+    MpcModelData modelData;
     ModelQP modelQP;
+    OptimizationRequest request;
+    JOptimizer optimizer;
 
-    public static MpcController of(MPCModelData modelData, ModelQP modelQP) {
+    public MpcController(@NonNull MpcModelData modelData, @NonNull ModelQP modelQP) {
+        this.modelData = modelData;
+        this.modelQP = modelQP;
+        this.request=new OptimizationRequest();
+        this.optimizer = new JOptimizer();
+    }
+
+    public static MpcController of(MpcModelData modelData, ModelQP modelQP) {
         return new MpcController(modelData, modelQP);
     }
 
     public double[] calculateInputSignal(StatePresentAndReference stateAndRef) throws JOptimizerException {
+        setRequest(stateAndRef);
+        return getOptimizationResult();
+    }
 
-        //optimization problem
-        var or = new OptimizationRequest();
-        or.setF0(modelQP.costFunction(stateAndRef));
+    private void setRequest(StatePresentAndReference stateAndRef) {
+        request.setF0(modelQP.costFunction(stateAndRef));
         double[] initialPoint = ArrayCreator.createArrayWithSameDoubleNumber(modelData.horizon(), 0.0);
-        or.setInitialPoint(initialPoint);
-        or.setFi(modelQP.constraints());
+        request.setInitialPoint(initialPoint);
+        request.setFi(modelQP.constraints());
+    }
 
-        //optimization
-        var opt = new JOptimizer();
-        opt.setOptimizationRequest(or);
-        opt.optimize();
-        var response = opt.getOptimizationResponse();
+    private double[] getOptimizationResult() throws JOptimizerException {
+        optimizer.setOptimizationRequest(request);
+        optimizer.optimize();
+        var response = optimizer.getOptimizationResponse();
         return response.getSolution();
-
     }
 
 
