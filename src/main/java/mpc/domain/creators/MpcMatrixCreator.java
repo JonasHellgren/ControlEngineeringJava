@@ -20,7 +20,11 @@ public class MpcMatrixCreator {
 
     MPCModelData modelData;
 
-    public MpcMatrices getMpcMatrices() {
+    public static MpcMatrixCreator of(MPCModelData modelData) {
+        return new MpcMatrixCreator(modelData);
+    }
+
+    public MpcMatrices createMatrices() {
         return   MpcMatrices.builder()
                 .S(matrixS())
                 .T(matrixT())

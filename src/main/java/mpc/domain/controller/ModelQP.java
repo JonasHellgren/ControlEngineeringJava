@@ -1,10 +1,10 @@
-package mpc.domain;
+package mpc.domain.controller;
 
 import com.joptimizer.functions.ConvexMultivariateRealFunction;
 import com.joptimizer.functions.PDQuadraticMultivariateRealFunction;
 import lombok.Builder;
 import lombok.NonNull;
-import lombok.With;
+import lombok.Setter;
 import mpc.domain.creators.MpcVectorFCreator;
 import mpc.domain.value_objects.MPCModelData;
 import mpc.domain.value_objects.MpcMatrices;
@@ -16,20 +16,28 @@ import org.nd4j.shade.guava.base.Preconditions;
  * * min   x'Qx+kx
  */
 
-@Builder
 @NonNull
 public class ModelQP {
 
     MPCModelData modelData;
     MpcMatrices matrices;
     MpcVectorFCreator vectorFCreator;
-    @With private double upperBound;
+    @Setter
+    private double upperBound;
+
+    @Builder
+    public ModelQP(MPCModelData modelData, MpcMatrices matrices, double upperBound) {
+        this.modelData = modelData;
+        this.matrices = matrices;
+        this.upperBound = upperBound;
+        this.vectorFCreator=new MpcVectorFCreator(modelData, matrices);
+    }
 
     public ConvexMultivariateRealFunction costFunction(StatePresentAndReference statePresentAndReference) {
         Preconditions.checkArgument(modelData.isOk(), "modelData not ok");
-        double[][] H = matrices.H().getData();
+        double[][] h = matrices.H().getData();
         double[] f = vectorFCreator.vectorFSameXrefEveryStep(statePresentAndReference).toArray();
-        return new PDQuadraticMultivariateRealFunction(H, f, 0);
+        return new PDQuadraticMultivariateRealFunction(h, f, 0);
     }
 
     /**

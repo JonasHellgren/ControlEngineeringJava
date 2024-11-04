@@ -17,8 +17,8 @@ class TestResponseCalculator1dIntegrator {
     @BeforeEach
     void init() {
         model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
-        var mpcMatrices = new MpcMatrixCreator(model).getMpcMatrices();
-        calculator = new ResponseCalculator(model, mpcMatrices);
+        var mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
+        calculator = ResponseCalculator.of(model, mpcMatrices);
     }
 
 
@@ -34,8 +34,5 @@ class TestResponseCalculator1dIntegrator {
         var response=calculator.response(createZeroVector(1),createOnesVector(model.horizon()));
         Assertions.assertEquals(response, MatrixUtils.createRealVector(new double[]{1, 2}));
     }
-
-
-
 
 }

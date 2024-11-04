@@ -12,6 +12,11 @@ public class ResponseCalculator {
     MPCModelData model;
     MpcMatrices matrices;
 
+    public static ResponseCalculator of(MPCModelData model, MpcMatrices matrices) {
+        return new ResponseCalculator(model, matrices);
+    }
+
+
     public RealVector response(RealVector x, RealVector u) {
         Preconditions.checkArgument(x.getDimension() == model.nStates());
         Preconditions.checkArgument(u.getDimension() == model.horizon());

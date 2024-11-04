@@ -17,8 +17,9 @@ public class TestMpcVectorFCreator {
     @BeforeEach
     void init() {
         model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
-        var matrixes= new MpcMatrixCreator(model).getMpcMatrices();
-        calculator = new MpcVectorFCreator(model, matrixes); }
+        var matrices= MpcMatrixCreator.of(model).createMatrices();
+        calculator = MpcVectorFCreator.of(model, matrices);
+    }
 
 
     @Test

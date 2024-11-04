@@ -4,7 +4,6 @@ import com.joptimizer.exception.JOptimizerException;
 import com.joptimizer.optimizers.JOptimizer;
 import com.joptimizer.optimizers.OptimizationRequest;
 import lombok.AllArgsConstructor;
-import mpc.domain.ModelQP;
 import mpc.domain.value_objects.MPCModelData;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.hellgren.utilities.list_arrays.ArrayCreator;
@@ -14,6 +13,10 @@ public class MpcController {
 
     MPCModelData modelData;
     ModelQP modelQP;
+
+    public static MpcController of(MPCModelData modelData, ModelQP modelQP) {
+        return new MpcController(modelData, modelQP);
+    }
 
     public double[] calculateInputSignal(StatePresentAndReference stateAndRef) throws JOptimizerException {
 

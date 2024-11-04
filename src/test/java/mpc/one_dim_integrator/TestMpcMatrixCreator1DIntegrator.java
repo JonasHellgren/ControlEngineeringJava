@@ -26,7 +26,7 @@ class TestMpcMatrixCreator1DIntegrator {
     @BeforeEach
     void init() {
         model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
-        mpcMatrices = new MpcMatrixCreator(model).getMpcMatrices();
+        mpcMatrices = new MpcMatrixCreator(model).createMatrices();
         a = MatrixUtils.createRealMatrix(model.matrixA());
         b = MatrixUtils.createRealVector((model.vectorB()));
     }

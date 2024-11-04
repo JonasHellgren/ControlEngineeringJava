@@ -17,6 +17,9 @@ public class MpcVectorFCreator {
     MPCModelData modelData;
     MpcMatrices matrices;
 
+    public static MpcVectorFCreator of(MPCModelData modelData, MpcMatrices matrices) {
+        return new MpcVectorFCreator(modelData, matrices);
+    }
 
     public RealVector vectorFSameXrefEveryStep(StatePresentAndReference statePresentAndReference) {
         return vectorFSameXrefEveryStep(statePresentAndReference.x(), statePresentAndReference.xRef());
