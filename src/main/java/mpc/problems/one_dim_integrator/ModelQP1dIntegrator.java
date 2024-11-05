@@ -1,14 +1,17 @@
-package mpc.domain.controller;
+package mpc.problems.one_dim_integrator;
 
 import com.joptimizer.functions.ConvexMultivariateRealFunction;
 import com.joptimizer.functions.PDQuadraticMultivariateRealFunction;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.Setter;
+import mpc.domain.controller.ModelQPHelper;
+import mpc.domain.controller.ModelQPI;
 import mpc.domain.creators.MpcVectorFCreator;
 import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
+import org.apache.commons.math3.util.Pair;
 import org.hellgren.utilities.joptimizer.UpperBoundConstraint;
 import org.nd4j.shade.guava.base.Preconditions;
 
@@ -17,27 +20,21 @@ import org.nd4j.shade.guava.base.Preconditions;
  */
 
 @NonNull
-public class ModelQP {
+public class ModelQP1dIntegrator implements ModelQPI {
 
-    MpcModelData modelData;
-    MpcMatrices matrices;
-    MpcVectorFCreator vectorFCreator;
+    ModelQPHelper helper;
     @Setter
-    private double upperBound;
+    private Pair<Double, Double> controlBounds;
 
     @Builder
-    public ModelQP(MpcModelData modelData, MpcMatrices matrices, double upperBound) {
-        this.modelData = modelData;
-        this.matrices = matrices;
-        this.upperBound = upperBound;
-        this.vectorFCreator=new MpcVectorFCreator(modelData, matrices);
+    public ModelQP1dIntegrator(MpcModelData modelData, MpcMatrices matrices, Pair<Double, Double> bounds) {
+        this.helper = new ModelQPHelper(modelData, matrices);
+        this.controlBounds = bounds;
+
     }
 
     public ConvexMultivariateRealFunction costFunction(StatePresentAndReference statePresentAndReference) {
-        Preconditions.checkArgument(modelData.isOk(), "modelData not ok");
-        double[][] h = matrices.H().getData();
-        double[] f = vectorFCreator.vectorFSameXrefEveryStep(statePresentAndReference).toArray();
-        return new PDQuadraticMultivariateRealFunction(h, f, 0);
+        return helper.getCostFunction(statePresentAndReference);
     }
 
     /**
@@ -47,11 +44,12 @@ public class ModelQP {
      * @return an array of constraints as ConvexMultivariateRealFunction objects
      */
     public ConvexMultivariateRealFunction[] constraints() {
+        var modelData = helper.getModelData();
         var inequalities = new ConvexMultivariateRealFunction[modelData.horizon()];
 
         for (int i = 0; i < modelData.horizon(); i++) {
             inequalities[i] = UpperBoundConstraint.builder()
-                    .nDim(modelData.horizon()).variableIndex(i).upperBound(upperBound).build();
+                    .nDim(modelData.horizon()).variableIndex(i).upperBound(controlBounds.getSecond()).build();
         }
         return inequalities;
 

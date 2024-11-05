@@ -1,7 +1,11 @@
 package mpc.domain.value_objects;
 
 import lombok.With;
+import mpc.helpers.RealVectorUtils;
 import org.apache.commons.math3.linear.MatrixUtils;
+import org.apache.commons.math3.linear.RealVector;
+import org.jetbrains.annotations.NotNull;
+
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
 public record MpcModelData(
@@ -28,5 +32,10 @@ public record MpcModelData(
     public int nInputs() {
         return N_INPUTS;
     }
+
+    public RealVector getStateValues(RealVector response, int stateIndex) {
+        return RealVectorUtils.extractStateValues(stateIndex, nStates(),horizon(), response);
+    }
+
 
 }

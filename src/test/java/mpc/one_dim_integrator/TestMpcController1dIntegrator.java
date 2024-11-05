@@ -2,7 +2,7 @@ package mpc.one_dim_integrator;
 
 import com.joptimizer.exception.JOptimizerException;
 import lombok.SneakyThrows;
-import mpc.domain.controller.ModelQP;
+import mpc.problems.one_dim_integrator.ModelQP1dIntegrator;
 import mpc.domain.calculators.ResponseCalculator;
 import mpc.domain.controller.MpcController;
 import mpc.domain.creators.MpcMatrixCreator;
@@ -12,6 +12,7 @@ import mpc.domain.value_objects.StatePresentAndReference;
 import mpc.problems.one_dim_integrator.FactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealVector;
+import org.apache.commons.math3.util.Pair;
 import org.junit.jupiter.api.Test;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createOnesVector;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
@@ -33,16 +34,16 @@ class TestMpcController1dIntegrator {
     MpcModelData model;
     MpcMatrices mpcMatrices;
     MpcController controller;
-    ModelQP modelQP;
+    ModelQP1dIntegrator modelQP;
 
     private void initWithHorizonAndInputBoundAndPenalty(int horizon, double upperBound, double pen) {
         model = FactoryOneDimIntegrator.createModelData(horizon)
                 .withControlPenalty(new double[]{pen});
         mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
-        modelQP= ModelQP.builder()
+        modelQP= ModelQP1dIntegrator.builder()
                 .modelData(model)
                 .matrices(mpcMatrices)
-                .upperBound(upperBound)
+                .bounds(Pair.create(0d,upperBound))
                 .build();
         controller=MpcController.of(model, modelQP);
     }

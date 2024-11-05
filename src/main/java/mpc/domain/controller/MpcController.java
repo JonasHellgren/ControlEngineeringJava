@@ -11,18 +11,18 @@ import org.hellgren.utilities.list_arrays.ArrayCreator;
 public class MpcController {
 
     MpcModelData modelData;
-    ModelQP modelQP;
+    ModelQPI modelQP;
     OptimizationRequest request;
     JOptimizer optimizer;
 
-    public MpcController(@NonNull MpcModelData modelData, @NonNull ModelQP modelQP) {
+    public MpcController(@NonNull MpcModelData modelData, @NonNull ModelQPI modelQP) {
         this.modelData = modelData;
         this.modelQP = modelQP;
         this.request=new OptimizationRequest();
         this.optimizer = new JOptimizer();
     }
 
-    public static MpcController of(MpcModelData modelData, ModelQP modelQP) {
+    public static MpcController of(MpcModelData modelData, ModelQPI modelQP) {
         return new MpcController(modelData, modelQP);
     }
 

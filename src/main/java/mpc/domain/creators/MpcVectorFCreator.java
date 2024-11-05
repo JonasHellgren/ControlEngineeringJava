@@ -31,14 +31,12 @@ public class MpcVectorFCreator {
         checkArgument(xStart.getDimension() == modelData.nStates());
         checkArgument(xRef0.getDimension() == modelData.nStates());
         var vectors = ListCreator.nCopiesMutable(xRef0, modelData.horizon());
-        System.out.println("vectors = " + vectors);
         var vector = MatrixStacking.stackVectorsHorizontally(vectors);
         return vectorF(xStart, vector);
     }
 
     public RealVector vectorF(RealVector x, RealVector xRef) {
         checkArgument(x.getDimension() == modelData.nStates());
-        System.out.println("xRef = " + xRef);
         checkArgument(xRef.getDimension() == modelData.nStates() * modelData.horizon());
         var t = matrices.T();
         var q = matrices.Q();
