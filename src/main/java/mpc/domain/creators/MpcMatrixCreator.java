@@ -1,7 +1,7 @@
 package mpc.domain.creators;
 
 import com.google.common.collect.Lists;
-import helpers.MatrixStacking;
+import org.hellgren.utilities.vector_algebra.MatrixStacking;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import mpc.domain.value_objects.MpcModelData;
@@ -15,7 +15,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+import static org.hellgren.utilities.vector_algebra.MatrixStacking.vectorsToMatrix;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
+import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
 @AllArgsConstructor
 @Getter
@@ -48,11 +50,13 @@ public class MpcMatrixCreator {
     private RealMatrix matrixT() {
         List<RealMatrix> rows = Lists.newArrayList();
         for (int ri = 0; ri < modelData.horizon(); ri++) {
-            RealMatrix row = MyMatrixUtils.stackVectorsHorizontally(getRowElements(ri));
+            RealMatrix row=vectorsToMatrix(getRowElements(ri));
             rows.add(row);
         }
+        var m=MatrixStacking.stackVertically(rows);
         return MatrixStacking.stackVertically(rows);
     }
+
 
     @NotNull
     private List<RealVector> getRowElements(int rowIndex) {
@@ -60,10 +64,10 @@ public class MpcMatrixCreator {
         var b = MatrixUtils.createRealVector(modelData.vectorB());
         List<RealVector> vectors = Lists.newArrayList();
         for (int ei = 0; ei < modelData.horizon(); ei++) {
-            RealVector m = rowIndex - ei < 0
+            RealVector v = rowIndex - ei < 0
                     ? createZeroVector(modelData.nStates())
                     : a.power(rowIndex - ei).operate(b);
-            vectors.add(m);
+            vectors.add(v);
         }
         return vectors;
     }

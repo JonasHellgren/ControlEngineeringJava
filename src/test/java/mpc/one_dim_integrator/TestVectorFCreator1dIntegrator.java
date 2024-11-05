@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMpcVectorFCreator {
+public class TestVectorFCreator1dIntegrator {
 
     public static final int HORIZON = 2;
     MpcModelData model;
@@ -26,7 +26,7 @@ public class TestMpcVectorFCreator {
 
     @Test
     void whenMatrixF_thenCorrect() {
-        var f=calculator.vectorFSameXrefEveryStep(createZeroVector(1),createOnesVector(HORIZON));
+        var f=calculator.vectorFSameXrefEveryStep(createZeroVector(1),createOnesVector(model.nStates()));
         assertEquals( model.horizon(), properties(f).nRows());
         assertEquals( 1, properties(f).nColumns());
     }

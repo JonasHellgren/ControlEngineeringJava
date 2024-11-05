@@ -6,6 +6,7 @@ import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.apache.commons.math3.linear.RealVector;
 import org.hellgren.utilities.list_arrays.ListCreator;
+import org.hellgren.utilities.vector_algebra.MatrixStacking;
 import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 
 import static com.google.common.base.Preconditions.checkArgument;
@@ -26,16 +27,18 @@ public class MpcVectorFCreator {
     }
 
 
-    public RealVector vectorFSameXrefEveryStep(RealVector x, RealVector xRef0) {
-        checkArgument(x.getDimension() == modelData.nStates());
-        checkArgument(xRef0.getDimension() == modelData.horizon());
+    public RealVector vectorFSameXrefEveryStep(RealVector xStart, RealVector xRef0) {
+        checkArgument(xStart.getDimension() == modelData.nStates());
+        checkArgument(xRef0.getDimension() == modelData.nStates());
         var vectors = ListCreator.nCopiesMutable(xRef0, modelData.horizon());
-        var vector = MyMatrixUtils.stackVectorsHorizontallyToVector(vectors);
-        return vectorF(x, vector);
+        System.out.println("vectors = " + vectors);
+        var vector = MatrixStacking.stackVectorsHorizontally(vectors);
+        return vectorF(xStart, vector);
     }
 
     public RealVector vectorF(RealVector x, RealVector xRef) {
         checkArgument(x.getDimension() == modelData.nStates());
+        System.out.println("xRef = " + xRef);
         checkArgument(xRef.getDimension() == modelData.nStates() * modelData.horizon());
         var t = matrices.T();
         var q = matrices.Q();

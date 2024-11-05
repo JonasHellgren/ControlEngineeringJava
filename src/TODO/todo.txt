@@ -16,10 +16,14 @@ clean up  x
 
 LunarLanding x
 TestModelDataLunarLanding  x
-TestMatrixCreatorLunarLanding
-TestVectorFCreatorLunarLanding
-TestControllerLunarLanding
+TestMatrixCreatorLunarLanding  x
+TestVectorFCreatorLunarLanding x
+TestResponseLunarLanding x
+stackVectorsHorizontallyOld används i matrixT  x
+stackVectorsHorizontallyOld -> MatrixStackers stackVectorsVertically  x
+stackVectorsHorizontally -> MatrixStacking x
 
+TestControllerLunarLanding
 
 
 Runner1dIntegrator  - plotta pos sfa tid efter simulering där input tas från mpc derx=Ax+Bu för simulering

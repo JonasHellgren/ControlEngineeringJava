@@ -5,24 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/lunar_landing/discrete_model.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/lunar_landing/state_space_eq_lunar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/FactoryLunarLanding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestMatrixCreatorLunarLanding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestModelDataLunarLanding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestControllerLunarLanding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestResponseCalculatorLunarLander.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestVectorFCreatorLunarLanding.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/table_saver/TableToImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MatrixStacking.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MyMatrixUtils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/pics/table.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/runners/RunnerSaveTableAsFigure.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/test/java/utilities/TestMyMatrixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TODO/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO/todo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/one_dim_integrator.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/one_dim_integrator/one_dim_integrator.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/problems/one_dim_integrator/MatrixDataFactoryOneDimIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/one_dim_integrator/FactoryOneDimIntegrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestModelData1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestModelData1dIntegrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/MatrixStacking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcMatrixCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcMatrixCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcVectorFCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcVectorFCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/TestMatrixStacking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/TestMatrixStacking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestMatrixCreatorLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestMatrixCreatorLunarLanding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcController1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcController1dIntegrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCreator1DIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCreator1DIntegrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcVectorFCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestVectorFCreator1dIntegrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestResponseCalculator1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestResponseCalculator1dIntegrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" afterDir="false" />
@@ -96,11 +97,19 @@
     "JUnit.TestMpcController1dIntegrator.givenHorizon4_whenRefIsZero_thenCorrectResponse.executor": "Run",
     "JUnit.TestMpcController1dIntegrator.whenControlInputIsZero_thenCorrectResponse.executor": "Run",
     "JUnit.TestMpcMatrixCalculator1DIntegrator.executor": "Run",
+    "JUnit.TestMpcMatrixCreator1DIntegrator.executor": "Run",
     "JUnit.TestMyMatrixUtils.executor": "Run",
+    "JUnit.TestMyMatrixUtils.testStackVectorsHorizontally.executor": "Run",
     "JUnit.TestResponseCalculator1dIntegrator.executor": "Run",
     "JUnit.TestResponseCalculator1dIntegrator.whenControlInoutIsZero_thenCorrectResponse.executor": "Run",
     "JUnit.TestResponseCalculator1dIntegrator.whenControlInputIsOne_thenCorrectResponse.executor": "Run",
     "JUnit.TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect.executor": "Run",
+    "JUnit.TestResponseCalculatorLunarLander.whenControlInputIsOne_thenCorrectResponse.executor": "Run",
+    "JUnit.TestResponseCalculatorLunarLander.whenControlInputIsZero_thenCorrectResponse.executor": "Run",
+    "JUnit.TestVectorFCreator1dIntegrator.whenMatrixF_thenCorrect.executor": "Run",
+    "JUnit.TestVectorFCreatorLunarLanding.executor": "Run",
+    "JUnit.lunar_landing in ControlEngineeringJava.executor": "Run",
+    "JUnit.mpc in ControlEngineeringJava.executor": "Run",
     "JUnit.one_dim_integrator in ControlEngineeringJava.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
@@ -118,11 +127,12 @@
       <recent name="C:\JavaCode\ControlEngineeringJava\src\main\java\mpc\documentation\one_dim_integrator" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mpc.lunar_landing" />
       <recent name="mpc.problems.lunar_landing" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestMatrixCreatorLunarLanding">
-    <configuration name="TestMatrixCreatorLunarLanding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.mpc in ControlEngineeringJava">
+    <configuration name="TestResponseCalculatorLunarLander.whenControlInputIsOne_thenCorrectResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -132,13 +142,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.lunar_landing" />
-      <option name="MAIN_CLASS_NAME" value="mpc.lunar_landing.TestMatrixCreatorLunarLanding" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="mpc.lunar_landing.TestResponseCalculatorLunarLander" />
+      <option name="METHOD_NAME" value="whenControlInputIsOne_thenCorrectResponse" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestModelDataLunarLanding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponseCalculatorLunarLander.whenControlInputIsZero_thenCorrectResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ControlEngineeringJava" />
       <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
@@ -148,40 +159,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mpc.lunar_landing" />
-      <option name="MAIN_CLASS_NAME" value="mpc.lunar_landing.TestModelDataLunarLanding" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMpcController1dIntegrator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ControlEngineeringJava" />
-      <shortenClasspath name="ARGS_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcController1dIntegrator" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMpcController1dIntegrator.givenHorizon2AndHighControlPenaly_whenRefIsOneAndHighInputBound_thenCorrectResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ControlEngineeringJava" />
-      <shortenClasspath name="ARGS_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mpc.one_dim_integrator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mpc.one_dim_integrator" />
-      <option name="MAIN_CLASS_NAME" value="mpc.one_dim_integrator.TestMpcController1dIntegrator" />
-      <option name="METHOD_NAME" value="givenHorizon2AndHighControlPenaly_whenRefIsOneAndHighInputBound_thenCorrectResponse" />
+      <option name="MAIN_CLASS_NAME" value="mpc.lunar_landing.TestResponseCalculatorLunarLander" />
+      <option name="METHOD_NAME" value="whenControlInputIsZero_thenCorrectResponse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,6 +169,24 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <shortenClasspath name="ARGS_FILE" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lunar_landing in ControlEngineeringJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/mpc/lunar_landing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mpc in ControlEngineeringJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ControlEngineeringJava" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/mpc" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestMatrixCreatorLunarLanding" />
-        <item itemvalue="JUnit.TestModelDataLunarLanding" />
+        <item itemvalue="JUnit.mpc in ControlEngineeringJava" />
+        <item itemvalue="JUnit.TestResponseCalculatorLunarLander.whenControlInputIsZero_thenCorrectResponse" />
+        <item itemvalue="JUnit.TestResponseCalculatorLunarLander.whenControlInputIsOne_thenCorrectResponse" />
+        <item itemvalue="JUnit.lunar_landing in ControlEngineeringJava" />
         <item itemvalue="JUnit.one_dim_integrator in ControlEngineeringJava" />
-        <item itemvalue="JUnit.TestMpcController1dIntegrator.givenHorizon2AndHighControlPenaly_whenRefIsOneAndHighInputBound_thenCorrectResponse" />
-        <item itemvalue="JUnit.TestMpcController1dIntegrator" />
       </list>
     </recent_temporary>
   </component>

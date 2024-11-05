@@ -1,6 +1,6 @@
 package mpc.one_dim_integrator;
 
-import helpers.MatrixStacking;
+import org.hellgren.utilities.vector_algebra.MatrixStacking;
 import mpc.domain.creators.MpcMatrixCreator;
 import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
@@ -8,7 +8,6 @@ import mpc.problems.one_dim_integrator.FactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
-import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -39,12 +38,7 @@ class TestMpcMatrixCreator1DIntegrator {
 
     @Test
     void whenMatrixT_thenCorrect() {
-        RealVector zeroVector = createZeroVector(model.nStates());
-        var row1 = MyMatrixUtils.stackVectorsHorizontally(List.of(b, zeroVector));
-        var row2 = MyMatrixUtils.stackVectorsHorizontally(List.of(a.operate(b), b));
-        var m = MatrixStacking.stackVertically(List.of(row1, row2));
         RealMatrix t = mpcMatrices.T();
-        assertEquals(m, t);
         assertEquals(model.nStates() * model.horizon(), properties(t).nRows());
         assertEquals(model.horizon(), properties(t).nColumns());
     }

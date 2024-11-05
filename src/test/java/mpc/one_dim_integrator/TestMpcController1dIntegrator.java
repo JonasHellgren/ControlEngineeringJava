@@ -113,12 +113,12 @@ class TestMpcController1dIntegrator {
 
 
     StatePresentAndReference getStateAndRefXero() {
-        return StatePresentAndReference.of(STATE_START, createZeroVector(model.horizon()));
+        return StatePresentAndReference.of(STATE_START, createZeroVector(model.nStates()));
     }
 
 
     StatePresentAndReference getStateAndRefOne() {
-        return StatePresentAndReference.of(STATE_START, createOnesVector(model.horizon()));
+        return StatePresentAndReference.of(STATE_START, createOnesVector(model.nStates()));
     }
 
 

@@ -26,15 +26,15 @@ class TestResponseCalculator1dIntegrator {
 
     @Test
     void whenControlInputIsZero_thenCorrectResponse() {
-        var response=calculator.response(createZeroVector(1),createZeroVector(model.horizon()));
-        Assertions.assertEquals(response,createZeroVector(model.horizon()));
+        var response=calculator.response(createZeroVector(model.nStates()),createZeroVector(model.horizon()));
+        Assertions.assertEquals(createZeroVector(model.horizon()),response);
     }
 
 
     @Test
     void whenControlInputIsOne_thenCorrectResponse() {
-        var response=calculator.response(createZeroVector(1),createOnesVector(model.horizon()));
-        Assertions.assertEquals(response, MatrixUtils.createRealVector(new double[]{1, 2}));
+        var response=calculator.response(createZeroVector(model.nStates()),createOnesVector(model.horizon()));
+        Assertions.assertEquals(MatrixUtils.createRealVector(new double[]{1, 2}),response);
     }
 
 }

@@ -22,7 +22,6 @@ public class TestMatrixCreatorLunarLanding {
         mpcMatrices = new MpcMatrixCreator(model).createMatrices();
     }
 
-
     @Test
     void whenMatrixS_thenCorrect() {
         var s=mpcMatrices.S();
