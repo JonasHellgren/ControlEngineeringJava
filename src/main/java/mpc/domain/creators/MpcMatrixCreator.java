@@ -47,26 +47,33 @@ public class MpcMatrixCreator {
         return MatrixStacking.stackVertically(matrices);
     }
 
+    /**
+     *  A single matrix corresponding to for example [B 0 .. 0}
+     */
+
     private RealMatrix matrixT() {
-        List<RealMatrix> rows = Lists.newArrayList();
-        for (int ri = 0; ri < modelData.horizon(); ri++) {
-            RealMatrix row=vectorsToMatrix(getRowElements(ri));
-            rows.add(row);
+        List<RealMatrix> matrices = Lists.newArrayList();
+        for (int ti = 0; ti < modelData.horizon(); ti++) {
+            RealMatrix matrix=vectorsToMatrix(getVectors(ti));
+            matrices.add(matrix);
         }
-        var m=MatrixStacking.stackVertically(rows);
-        return MatrixStacking.stackVertically(rows);
+        return MatrixStacking.stackVertically(matrices);
     }
 
 
+    /**
+     * Creates vectors corresponding to elements in T matrix, for example B, AB, etc
+     */
+
     @NotNull
-    private List<RealVector> getRowElements(int rowIndex) {
+    private List<RealVector> getVectors(int ti) {
         var a = MatrixUtils.createRealMatrix(modelData.matrixA());
         var b = MatrixUtils.createRealVector(modelData.vectorB());
         List<RealVector> vectors = Lists.newArrayList();
         for (int ei = 0; ei < modelData.horizon(); ei++) {
-            RealVector v = rowIndex - ei < 0
+            RealVector v = ti - ei < 0
                     ? createZeroVector(modelData.nStates())
-                    : a.power(rowIndex - ei).operate(b);
+                    : a.power(ti - ei).operate(b);
             vectors.add(v);
         }
         return vectors;

@@ -35,7 +35,7 @@ class TestMpcController1dIntegrator {
     MpcController controller;
     ModelQP modelQP;
 
-    private void initWithHorizonAndInputBoundAndPentaly(int horizon, double upperBound, double pen) {
+    private void initWithHorizonAndInputBoundAndPenalty(int horizon, double upperBound, double pen) {
         model = FactoryOneDimIntegrator.createModelData(horizon)
                 .withControlPenalty(new double[]{pen});
         mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
@@ -50,8 +50,8 @@ class TestMpcController1dIntegrator {
 
     @SneakyThrows
     @Test
-    void givenHorizon2_whenRefIsZero_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_2, UPPER_BOUND, CONTROL_PENALTY_ZERO);
+    void givenHorizon2_whenRefIsZero_thenCorrectInput() {
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_2, UPPER_BOUND, CONTROL_PENALTY_ZERO);
         var input=controller.calculateInputSignal(getStateAndRefXero());
         assertArrayEquals(new double[]{0d, 0d},input, TOL);
     }
@@ -59,7 +59,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon2_whenRefIsOne_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_2, UPPER_BOUND, CONTROL_PENALTY_ZERO);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_2, UPPER_BOUND, CONTROL_PENALTY_ZERO);
         var response = getResponseForRefOne();
         assertArrayEquals(new double[]{UPPER_BOUND, TAR_ONE},response.toArray(), TOL);
     }
@@ -67,7 +67,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon2_whenRefIsOneAndHighInputBound_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_2, UPPER_BOUND_HIGH, CONTROL_PENALTY_ZERO);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_2, UPPER_BOUND_HIGH, CONTROL_PENALTY_ZERO);
         var response = getResponseForRefOne();
         assertArrayEquals(new double[]{TAR_ONE, TAR_ONE},response.toArray(), TOL);
     }
@@ -75,7 +75,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon2AndHighControlPenalty_whenRefIsOneAndHighInputBound_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_2, UPPER_BOUND_HIGH, 1);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_2, UPPER_BOUND_HIGH, 1);
         var response = getResponseForRefOne();
         assertTrue(response.toArray()[0]<TAR_ONE);
         assertTrue(response.toArray()[1]<TAR_ONE);
@@ -84,7 +84,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon4_whenRefIsZero_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_4, UPPER_BOUND, CONTROL_PENALTY_ZERO);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_4, UPPER_BOUND, CONTROL_PENALTY_ZERO);
         var input=controller.calculateInputSignal(getStateAndRefXero());
         assertArrayEquals(new double[]{0d, 0d,0d, 0d},input, TOL);
     }
@@ -92,7 +92,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon4_whenRefIsOne_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_4, UPPER_BOUND, CONTROL_PENALTY_ZERO);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_4, UPPER_BOUND, CONTROL_PENALTY_ZERO);
         var response = getResponseForRefOne();
         assertArrayEquals(new double[]{UPPER_BOUND, TAR_ONE,TAR_ONE,TAR_ONE},response.toArray(), TOL);
     }
@@ -100,7 +100,7 @@ class TestMpcController1dIntegrator {
     @SneakyThrows
     @Test
     void givenHorizon4_whenRefIsOneAndHighInputBound_thenCorrectResponse() {
-        initWithHorizonAndInputBoundAndPentaly(HORIZON_4, UPPER_BOUND_HIGH, CONTROL_PENALTY_ZERO);
+        initWithHorizonAndInputBoundAndPenalty(HORIZON_4, UPPER_BOUND_HIGH, CONTROL_PENALTY_ZERO);
         var response = getResponseForRefOne();
         assertArrayEquals(new double[]{TAR_ONE, TAR_ONE,TAR_ONE,TAR_ONE},response.toArray(), TOL);
     }
