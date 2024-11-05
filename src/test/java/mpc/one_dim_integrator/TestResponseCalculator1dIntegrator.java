@@ -3,7 +3,7 @@ package mpc.one_dim_integrator;
 import mpc.domain.calculators.ResponseCalculator;
 import mpc.domain.creators.MpcMatrixCreator;
 import mpc.domain.value_objects.MpcModelData;
-import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
+import mpc.problems.one_dim_integrator.FactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +18,7 @@ class TestResponseCalculator1dIntegrator {
 
     @BeforeEach
     void init() {
-        model = MatrixDataFactoryOneDimIntegrator.createModelData(2);
+        model = FactoryOneDimIntegrator.createModelData(2);
         var mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
         calculator = ResponseCalculator.of(model, mpcMatrices);
     }

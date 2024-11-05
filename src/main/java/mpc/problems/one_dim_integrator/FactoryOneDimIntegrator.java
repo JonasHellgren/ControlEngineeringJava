@@ -2,9 +2,9 @@ package mpc.problems.one_dim_integrator;
 
 import mpc.domain.value_objects.MpcModelData;
 
-public class MatrixDataFactoryOneDimIntegrator {
+public class FactoryOneDimIntegrator {
 
-    private MatrixDataFactoryOneDimIntegrator() {
+    private FactoryOneDimIntegrator() {
     }
 
     public static MpcModelData createModelData(int horizon) {

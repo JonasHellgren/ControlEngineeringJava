@@ -1,20 +1,21 @@
-package mpc.one_dim_integrator;
+package mpc.lunar_landing;
 
 import mpc.domain.value_objects.MpcModelData;
-import mpc.problems.one_dim_integrator.FactoryOneDimIntegrator;
+import mpc.problems.lunar_landing.FactoryLunarLanding;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TestModelData1dIntegrator {
+public class TestModelDataLunarLanding {
 
     public static final int HORIZON = 2;
     MpcModelData model;
 
     @BeforeEach
     void init() {
-        model = FactoryOneDimIntegrator.createModelData(HORIZON);
+        model = FactoryLunarLanding.createModelData(HORIZON);
     }
 
 
@@ -29,8 +30,9 @@ class TestModelData1dIntegrator {
     }
 
     @Test
-    void givenModel_whenNStates_then1() {
-        assertEquals(1, model.nStates());
+    void givenModel_whenNStates_then2() {
+        assertEquals(2, model.nStates());
     }
+
 
 }

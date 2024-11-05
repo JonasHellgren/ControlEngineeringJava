@@ -9,7 +9,7 @@ import mpc.domain.creators.MpcMatrixCreator;
 import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.MpcMatrices;
 import mpc.domain.value_objects.StatePresentAndReference;
-import mpc.problems.one_dim_integrator.MatrixDataFactoryOneDimIntegrator;
+import mpc.problems.one_dim_integrator.FactoryOneDimIntegrator;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealVector;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ class TestMpcController1dIntegrator {
     ModelQP modelQP;
 
     private void initWithHorizonAndInputBoundAndPentaly(int horizon, double upperBound, double pen) {
-        model = MatrixDataFactoryOneDimIntegrator.createModelData(horizon)
+        model = FactoryOneDimIntegrator.createModelData(horizon)
                 .withControlPenalty(new double[]{pen});
         mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
         modelQP= ModelQP.builder()

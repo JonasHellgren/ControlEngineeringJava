@@ -13,13 +13,16 @@ TestResponseCalculator1dIntegrator x
 test other horizon  x
 clean up  x
 
-Runner1dIntegrator  - plotta pos sfa tid efter simulering där input tas från mpc derx=Ax+Bu för simulering
 
-LunarLanding
-TestModelDataLunarLanding
+LunarLanding x
+TestModelDataLunarLanding  x
 TestMatrixCreatorLunarLanding
 TestVectorFCreatorLunarLanding
 TestControllerLunarLanding
+
+
+
+Runner1dIntegrator  - plotta pos sfa tid efter simulering där input tas från mpc derx=Ax+Bu för simulering
 
 RunnerLunarLanding
 
