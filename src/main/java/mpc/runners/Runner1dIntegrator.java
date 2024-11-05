@@ -26,30 +26,26 @@ public class Runner1dIntegrator {
         var model = FactoryOneDimIntegrator.createModelData(HORIZON)
                 .withControlPenalty(new double[]{CONTROL_PENALTY});
         var mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
-        var modelQP = ModelQP1dIntegrator.builder()
-                .modelData(model)
-                .matrices(mpcMatrices)
-                .bounds(BOUNDS)
-                .build();
+        var modelQP = ModelQP1dIntegrator.of(model,mpcMatrices,BOUNDS);
         var controller = MpcController.of(model, modelQP);
-
         var startAndRefState = getStateAndRefOne(model);
         var input = controller.calculateInputSignal(startAndRefState);
         var calculator = ResponseCalculator.of(model, mpcMatrices);
         var response = calculator.response(startAndRefState.x(), MatrixUtils.createRealVector(input));
-
         var positions = model.getStateValues(response, 0);
-        System.out.println("positions = " + positions);
-
-        var plotter=new Plotter();
-        plotter.addPlot(input, "Input",Pair.create(-1d,1d));
-        plotter.addPlot(positions.toArray(), "Position",Pair.create(-1d,1d));
-        plotter.show();
+        doPlotting(input, positions);
     }
 
     static StatePresentAndReference getStateAndRefOne(MpcModelData model) {
         RealVector stateStart = createZeroVector(model.nStates());
         return StatePresentAndReference.of(stateStart, createOnesVector(model.nStates()));
+    }
+
+    private static void doPlotting(double[] input, RealVector positions) {
+        var plotter=new Plotter();
+        plotter.addPlot(input, "Input",Pair.create(-1d,1d));
+        plotter.addPlot(positions.toArray(), "Position",Pair.create(-1d,1d));
+        plotter.show();
     }
 
 

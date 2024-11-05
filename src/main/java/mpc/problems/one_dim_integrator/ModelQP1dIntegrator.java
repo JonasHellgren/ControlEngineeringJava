@@ -30,7 +30,14 @@ public class ModelQP1dIntegrator implements ModelQPI {
     public ModelQP1dIntegrator(MpcModelData modelData, MpcMatrices matrices, Pair<Double, Double> bounds) {
         this.helper = new ModelQPHelper(modelData, matrices);
         this.controlBounds = bounds;
+    }
 
+    public static ModelQP1dIntegrator of(MpcModelData modelData, MpcMatrices matrices,Pair<Double, Double> bounds) {
+        return ModelQP1dIntegrator.builder()
+                .modelData(modelData)
+                .matrices(matrices)
+                .bounds(bounds)
+                .build();
     }
 
     public ConvexMultivariateRealFunction costFunction(StatePresentAndReference statePresentAndReference) {

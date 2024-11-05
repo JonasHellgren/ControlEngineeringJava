@@ -10,8 +10,10 @@ public class RealVectorUtils {
     }
 
     public static RealVector extractStateValues(int startIndex, int numStates, int numElements, RealVector vector) {
-        Preconditions.checkArgument((startIndex >= 0) && (numStates > 0) && (numElements > 0),"startIndex, numStates and numElements must be positive");
-        Preconditions.checkArgument(startIndex + numStates * numElements <= vector.getDimension(),"startIndex + numStates * numElements must be smaller than vector.getDimension()");
+        Preconditions.checkArgument((startIndex >= 0) && (numStates > 0) && (numElements > 0),
+                "startIndex, numStates and numElements must be positive");
+        Preconditions.checkArgument(startIndex + numStates * (numElements-1) < vector.getDimension(),
+                "startIndex + numStates * numElements must be smaller than vector.getDimension()");
         RealVector extractedVector = new ArrayRealVector(numElements);
         for (int i = 0; i < numElements; i++) {
             int index = startIndex + i * numStates;

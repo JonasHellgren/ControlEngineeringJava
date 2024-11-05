@@ -33,6 +33,14 @@ public class ModelQPLunarLander implements ModelQPI {
         this.controlBounds = bounds;
     }
 
+    public static ModelQPLunarLander of(MpcModelData model, MpcMatrices mpcMatrices, Pair<Double, Double> bounds) {
+        return ModelQPLunarLander.builder()
+                .modelData(model)
+                .matrices(mpcMatrices)
+                .bounds(bounds)
+                .build();
+    }
+
     public ConvexMultivariateRealFunction costFunction(StatePresentAndReference statePresentAndReference) {
         return helper.getCostFunction(statePresentAndReference);
     }
