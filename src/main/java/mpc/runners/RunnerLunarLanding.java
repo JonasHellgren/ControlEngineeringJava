@@ -9,14 +9,10 @@ import mpc.domain.value_objects.StatePresentAndReference;
 import mpc.helpers.Plotter;
 import mpc.problems.lunar_landing.FactoryLunarLanding;
 import mpc.problems.lunar_landing.ModelQPLunarLander;
-import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealVector;
 import org.apache.commons.math3.util.Pair;
-
 import java.util.Arrays;
-
 import static org.apache.commons.math3.linear.MatrixUtils.createRealVector;
-import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createOnesVector;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
 
 public class RunnerLunarLanding {
@@ -38,16 +34,16 @@ public class RunnerLunarLanding {
         var mpcMatrices = MpcMatrixCreator.of(model).createMatrices();
         var modelQP = ModelQPLunarLander.of(model,mpcMatrices,BOUNDS);
         var controller = MpcController.of(model, modelQP);
-        var startAndRefState = getStateAndRefOne(model);
+        var startAndRefState = getStartStateAndRefState(model);
         var input = controller.calculateInputSignal(startAndRefState);
         var calculator = ResponseCalculator.of(model, mpcMatrices);
-        var response = calculator.response(startAndRefState.x(), MatrixUtils.createRealVector(input));
+        var response = calculator.response(startAndRefState.x(), input);
         var speeds = model.getStateValues(response, 1);
         var positions = model.getStateValues(response, 0);
         doPlotting(input, speeds,positions);
     }
 
-    static StatePresentAndReference getStateAndRefOne(MpcModelData model) {
+    static StatePresentAndReference getStartStateAndRefState(MpcModelData model) {
         RealVector stateStart = createRealVector(new double[]{START_POS,START_SPD});
         return StatePresentAndReference.of(stateStart, createZeroVector(model.nStates()));
     }

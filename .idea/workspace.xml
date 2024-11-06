@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/lunar_landing/thrust.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/runners/RunnerLunarLanding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/lunar.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/mpc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/one_dim_integrator.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/HandF.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/HandFDefinitions.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/discrete_state_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/matrix_sizes.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/table_saver/TableToImage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MatrixStacking.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MyMatrixUtils.java" afterDir="false" />
@@ -14,10 +19,16 @@
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/runners/RunnerSaveTableAsFigure.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/test/java/utilities/TestMyMatrixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/helpers/RealVectorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/helpers/RealVectorUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/ModelQPLunarLander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/ModelQPLunarLander.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/problems/one_dim_integrator/ModelQP1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/one_dim_integrator/ModelQP1dIntegrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/runners/Runner1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/runners/Runner1dIntegrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TODO/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/QandR.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/QandR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/fVector.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/fVector.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/matrix_sizes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/qp_problem.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/qp_problem.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/stMatrixes.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/stMatrixes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/st_for2horizon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/st_for2horizon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/ResponseCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/ResponseCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/FactoryLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/FactoryLunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/runners/RunnerLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/runners/RunnerLunarLanding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" afterDir="false" />
@@ -58,6 +69,17 @@
     &quot;accountId&quot;: &quot;97ea88b1-39a1-4d6b-8a23-c244fe6dfb34&quot;
   }
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="Bundled (Maven 3)mvn" />
+        <option name="localRepository" value="C:\Users\jonashe2\.m2\repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="useMavenConfig" value="false" />
+        <option name="userSettingsFile" value="C:\Users\jonashe2\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -67,64 +89,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Runner1dIntegrator.executor": "Run",
-    "Application.RunnerLunarLanding.executor": "Run",
-    "JUnit.Test1dIntegratorModelData.executor": "Run",
-    "JUnit.Test1dIntegratorModelData.model_thenIsOk.executor": "Run",
-    "JUnit.Test1dIntegratorModelData.whenMatrixH_thenCorrect.executor": "Run",
-    "JUnit.Test1dIntegratorModelData.whenMatrixS_thenCorrect.executor": "Run",
-    "JUnit.Test1dIntegratorModelData.whenMatrixT_thenCorrect.executor": "Run",
-    "JUnit.TestArrayCreator.testDuplicateArray.executor": "Run",
-    "JUnit.TestCommon.executor": "Run",
-    "JUnit.TestControllerLunarLanding.executor": "Run",
-    "JUnit.TestControllerLunarLanding.givenHorizon10_whenRefIsOne_thenCorrectPositions.executor": "Run",
-    "JUnit.TestControllerLunarLanding.givenHorizon2_whenRefIsOne_thenCorrectResponse.executor": "Run",
-    "JUnit.TestControllerLunarLanding.givenHorizon2_whenRefIsZero_thenCorrectResponse.executor": "Run",
-    "JUnit.TestControllerLunarLanding.givenHorizon5_whenRefIsOne_thenCorrectResponse.executor": "Run",
-    "JUnit.TestMPCMatrixCalculator1dIntegrator.executor": "Run",
-    "JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixF_thenCorrect.executor": "Run",
-    "JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixH_thenCorrect.executor": "Run",
-    "JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixQ_thenCorrect.executor": "Run",
-    "JUnit.TestMatrixCreatorLunarLanding.executor": "Run",
-    "JUnit.TestMatrixStacking.executor": "Run",
-    "JUnit.TestModelData1dIntegrator.executor": "Run",
-    "JUnit.TestModelDataLunarLanding.executor": "Run",
-    "JUnit.TestMpcController1dIntegrator.executor": "Run",
-    "JUnit.TestMpcController1dIntegrator.givenHorizon2AndHighControlPenaly_whenRefIsOneAndHighInputBound_thenCorrectResponse.executor": "Run",
-    "JUnit.TestMpcController1dIntegrator.givenHorizon4_whenRefIsOne_thenCorrectResponse.executor": "Run",
-    "JUnit.TestMpcController1dIntegrator.givenHorizon4_whenRefIsZero_thenCorrectResponse.executor": "Run",
-    "JUnit.TestMpcController1dIntegrator.whenControlInputIsZero_thenCorrectResponse.executor": "Run",
-    "JUnit.TestMpcMatrixCalculator1DIntegrator.executor": "Run",
-    "JUnit.TestMpcMatrixCreator1DIntegrator.executor": "Run",
-    "JUnit.TestMyMatrixUtils.executor": "Run",
-    "JUnit.TestMyMatrixUtils.testStackVectorsHorizontally.executor": "Run",
-    "JUnit.TestResponseCalculator1dIntegrator.executor": "Run",
-    "JUnit.TestResponseCalculator1dIntegrator.whenControlInoutIsZero_thenCorrectResponse.executor": "Run",
-    "JUnit.TestResponseCalculator1dIntegrator.whenControlInputIsOne_thenCorrectResponse.executor": "Run",
-    "JUnit.TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect.executor": "Run",
-    "JUnit.TestResponseCalculatorLunarLander.whenControlInputIsOne_thenCorrectResponse.executor": "Run",
-    "JUnit.TestResponseCalculatorLunarLander.whenControlInputIsZero_thenCorrectResponse.executor": "Run",
-    "JUnit.TestVectorFCreator1dIntegrator.whenMatrixF_thenCorrect.executor": "Run",
-    "JUnit.TestVectorFCreatorLunarLanding.executor": "Run",
-    "JUnit.lunar_landing in ControlEngineeringJava.executor": "Run",
-    "JUnit.mpc in ControlEngineeringJava.executor": "Run",
-    "JUnit.one_dim_integrator in ControlEngineeringJava.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/JavaCode/JavaCommon",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Runner1dIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RunnerLunarLanding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test1dIntegratorModelData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test1dIntegratorModelData.model_thenIsOk.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test1dIntegratorModelData.whenMatrixH_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test1dIntegratorModelData.whenMatrixS_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test1dIntegratorModelData.whenMatrixT_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestArrayCreator.testDuplicateArray.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestCommon.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestControllerLunarLanding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestControllerLunarLanding.givenHorizon10_whenRefIsOne_thenCorrectPositions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestControllerLunarLanding.givenHorizon2_whenRefIsOne_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestControllerLunarLanding.givenHorizon2_whenRefIsZero_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestControllerLunarLanding.givenHorizon5_whenRefIsOne_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMPCMatrixCalculator1dIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixF_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixH_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMPCMatrixCalculator1dIntegrator.whenMatrixQ_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMatrixCreatorLunarLanding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMatrixStacking.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestModelData1dIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestModelDataLunarLanding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcController1dIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcController1dIntegrator.givenHorizon2AndHighControlPenaly_whenRefIsOneAndHighInputBound_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcController1dIntegrator.givenHorizon4_whenRefIsOne_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcController1dIntegrator.givenHorizon4_whenRefIsZero_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcController1dIntegrator.whenControlInputIsZero_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcMatrixCalculator1DIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMpcMatrixCreator1DIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMyMatrixUtils.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMyMatrixUtils.testStackVectorsHorizontally.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculator1dIntegrator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculator1dIntegrator.whenControlInoutIsZero_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculator1dIntegrator.whenControlInputIsOne_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculator1dIntegrator.whenMatrixS_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculatorLunarLander.whenControlInputIsOne_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestResponseCalculatorLunarLander.whenControlInputIsZero_thenCorrectResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestVectorFCreator1dIntegrator.whenMatrixF_thenCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestVectorFCreatorLunarLanding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.lunar_landing in ControlEngineeringJava.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.mpc in ControlEngineeringJava.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.one_dim_integrator in ControlEngineeringJava.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JavaCode/JavaCommon&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\JavaCode\ControlEngineeringJava\src\main\java\mpc\documentation\mpc_method" />
       <recent name="C:\JavaCode\ControlEngineeringJava\src\main\java\mpc\documentation\one_dim_integrator" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">

@@ -28,16 +28,9 @@ ModelQP1dIntegrator  x
 ModelQPLunarLanding  x
 
 TestControllerLunarLanding x
-
-
-Runner1dIntegrator  - plotta pos sfa tid efter simulering där input tas från mpc derx=Ax+Bu för simulering
-
-RunnerLunarLanding
-
-
+RunnerLunarLanding x
 
 comments
-
 documentation
 
 

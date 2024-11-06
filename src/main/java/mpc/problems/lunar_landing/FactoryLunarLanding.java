@@ -24,16 +24,16 @@ public class FactoryLunarLanding {
          */
     public static MpcModelData createModelData(int horizon, double dt, double m) {
         // Define the state transition matrix A
-        double[][] matrixA = new double[][]{{DT, dt}, {0, DT}};
+        double[][] matrixA = new double[][]{{dt, dt}, {0, dt}};
 
         // Define the control matrix B
         double[] vectorB = new double[]{0, dt / m};
 
         // Define the state penalty weights
-        double[] statePenalty = new double[]{DT, DT};
+        double[] statePenalty = new double[]{dt,dt};
 
         // Define the control penalty weights
-        double[] controlPenalty = new double[]{DT};
+        double[] controlPenalty = new double[]{dt};
         return new MpcModelData(horizon,matrixA, vectorB, statePenalty, controlPenalty);
     }
 
