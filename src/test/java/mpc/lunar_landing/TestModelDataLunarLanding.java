@@ -21,7 +21,7 @@ public class TestModelDataLunarLanding {
 
     @Test
     void model_thenIsOk() {
-        Assertions.assertTrue(model.isOk());
+        Assertions.assertTrue(model.isValid());
     }
 
     @Test

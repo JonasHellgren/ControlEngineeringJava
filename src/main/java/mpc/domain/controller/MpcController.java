@@ -8,6 +8,10 @@ import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.hellgren.utilities.list_arrays.ArrayCreator;
 
+/**
+ * A controller class for Model Predictive Control (MPC) that calculates the optimal input signal
+ * based on the current state and reference.
+ */
 public class MpcController {
 
     MpcModelData modelData;
@@ -26,6 +30,13 @@ public class MpcController {
         return new MpcController(modelData, modelQP);
     }
 
+    /**
+     * Calculates the optimal input signal based on the current state and reference.
+     *
+     * @param stateAndRef the current state and reference
+     * @return the optimal input signal
+     * @throws JOptimizerException if the optimization fails
+     */
     public double[] calculateInputSignal(StatePresentAndReference stateAndRef) throws JOptimizerException {
         setRequest(stateAndRef);
         return getOptimizationResult();

@@ -33,7 +33,6 @@ class TestControllerLunarLanding {
     static final double LOWER_BOUND_CONTROL = -FORCE;
     static final double UPPER_BOUND_CONTROL = FORCE;
     public static final Pair<Double, Double> BOUNDS = Pair.create(LOWER_BOUND_CONTROL, UPPER_BOUND_CONTROL);
-    static final double TAR_ONE = 1d;
     static final RealVector STATE_START = createRealVector(new double[]{5,0});
     public static final double START_POS = STATE_START.getEntry(0);
     static final double CONTROL_PENALTY_ZERO = 0d;

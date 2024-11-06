@@ -24,3 +24,6 @@ $
 
 
 where dt is time step
+
+
+![plots.png](..%2Fone_dim_integrator%2Fplots.png)

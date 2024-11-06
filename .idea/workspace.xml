@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a8f916-120b-4495-af39-c5c3289eefe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/lunar.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/mpc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/one_dim_integrator.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/HandF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/HandFDefinitions.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/discrete_state_space.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/matrix_sizes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/lunar_landing/plots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/one_dim_integrator/plots.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/table_saver/TableToImage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MatrixStacking.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/vector_algebra/MyMatrixUtils.java" afterDir="false" />
@@ -19,16 +14,23 @@
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/runners/RunnerSaveTableAsFigure.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaCommon/src/test/java/utilities/TestMyMatrixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TODO/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO/todo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/QandR.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/QandR.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/fVector.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/fVector.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/matrix_sizes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/qp_problem.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/qp_problem.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/stMatrixes.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/stMatrixes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/st_for2horizon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/mpc_method/st_for2horizon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/lunar.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/lunar.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/mpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/mpc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/one_dim_integrator.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/documentation/markdown/one_dim_integrator.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/ResponseCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/calculators/ResponseCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/FactoryLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/problems/lunar_landing/FactoryLunarLanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/runners/RunnerLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/runners/RunnerLunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/controller/ModelQPHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/controller/ModelQPHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/controller/MpcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/controller/MpcController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcMatrixCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcMatrixCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcVectorFCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/creators/MpcVectorFCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/MpcMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/MpcMatrices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/MpcModelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/MpcModelData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/StatePresentAndReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mpc/domain/value_objects/StatePresentAndReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestControllerLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestControllerLunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestMatrixCreatorLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestMatrixCreatorLunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestModelDataLunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestModelDataLunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestResponseCalculatorLunarLander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/lunar_landing/TestResponseCalculatorLunarLander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestModelData1dIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestModelData1dIntegrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCreator1DIntegrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mpc/one_dim_integrator/TestMpcMatrixCreator1DIntegrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/plotters/parallel_coordinates/ParallelCoordinatesChartCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCommon/src/main/java/org/hellgren/utilities/conditionals/Counter.java" afterDir="false" />
@@ -155,7 +157,7 @@
       <recent name="mpc.lunar_landing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunnerLunarLanding">
+  <component name="RunManager" selected="JUnit.mpc in ControlEngineeringJava">
     <configuration name="Runner1dIntegrator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mpc.runners.Runner1dIntegrator" />
       <module name="ControlEngineeringJava" />
@@ -233,9 +235,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.mpc in ControlEngineeringJava" />
         <item itemvalue="Application.RunnerLunarLanding" />
         <item itemvalue="Application.Runner1dIntegrator" />
-        <item itemvalue="JUnit.mpc in ControlEngineeringJava" />
         <item itemvalue="JUnit.TestControllerLunarLanding" />
         <item itemvalue="JUnit.TestControllerLunarLanding.givenHorizon10_whenRefIsOne_thenCorrectPositions" />
       </list>

@@ -39,3 +39,7 @@ C = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad
 D = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 $
 
+where dt is time step
+
+
+![plots.png](..%2Flunar_landing%2Fplots.png)

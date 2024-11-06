@@ -22,10 +22,11 @@ public class TestVectorFCreatorLunarLanding {
         calculator = MpcVectorFCreator.of(model, matrices);
     }
 
-
     @Test
     void whenMatrixF_thenCorrect() {
-        var f=calculator.vectorFSameXrefEveryStep(createZeroVector(model.nStates()),createOnesVector(model.nStates()));
+        var f=calculator.vectorFSameXrefEveryStep(
+                createZeroVector(model.nStates()),
+                createOnesVector(model.nStates()));
         assertEquals( model.horizon(), properties(f).nRows());
         assertEquals( 1, properties(f).nColumns());
     }

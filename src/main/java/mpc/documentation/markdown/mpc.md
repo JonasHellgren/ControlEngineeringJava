@@ -38,9 +38,7 @@ f: The gradient vector, which represents the linear part of the cost function an
 
 ![HandFDefinitions.png](..%2Fmpc_method%2FHandFDefinitions.png)
 
-
-![img.png](img.png)
-
+![stMatrixes.png](..%2Fmpc_method%2FstMatrixes.png)
 
 
 ## Matrix and vector sizes

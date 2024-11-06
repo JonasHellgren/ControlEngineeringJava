@@ -10,6 +10,9 @@ import mpc.domain.value_objects.MpcModelData;
 import mpc.domain.value_objects.StatePresentAndReference;
 import org.nd4j.shade.guava.base.Preconditions;
 
+/**
+ * Helper class for Model Predictive Control (MPC) that provides methods for calculating the cost function.
+ */
 @AllArgsConstructor
 @Getter
 public class ModelQPHelper {
@@ -19,14 +22,14 @@ public class ModelQPHelper {
     MpcVectorFCreator vectorFCreator;
 
     public ModelQPHelper(MpcModelData modelData, MpcMatrices matrices) {
-        Preconditions.checkArgument(modelData.isOk(), "modelData not ok");
+        Preconditions.checkArgument(modelData.isValid(), "modelData not ok");
         this.modelData = modelData;
         this.matrices = matrices;
         this.vectorFCreator=new MpcVectorFCreator(modelData, matrices);
     }
 
     public ConvexMultivariateRealFunction getCostFunction(StatePresentAndReference statePresentAndReference) {
-        double[][] h = matrices.H().getData();
+        double[][] h = matrices.hessian().getData();
         double[] f = vectorFCreator.vectorFSameXrefEveryStep(statePresentAndReference).toArray();
         return new PDQuadraticMultivariateRealFunction(h, f, 0);
     }

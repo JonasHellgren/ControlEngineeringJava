@@ -14,11 +14,15 @@ import org.hellgren.utilities.vector_algebra.MyMatrixUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static org.hellgren.utilities.vector_algebra.MatrixStacking.vectorsToMatrix;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.createZeroVector;
 import static org.hellgren.utilities.vector_algebra.MyMatrixUtils.properties;
 
+/**
+ * A class responsible for creating matrices used in Model Predictive Control (MPC) algorithm.
+ */
 @AllArgsConstructor
 @Getter
 public class MpcMatrixCreator {
@@ -31,10 +35,10 @@ public class MpcMatrixCreator {
 
     public MpcMatrices createMatrices() {
         return MpcMatrices.builder()
-                .S(matrixS())
-                .T(matrixT())
-                .H(matrixH())
-                .Q(matrixQ())
+                .stateImpact(matrixS())
+                .controlAffect(matrixT())
+                .hessian(matrixH())
+                .trackingPenalty(matrixQ())
                 .build();
     }
 
@@ -62,21 +66,21 @@ public class MpcMatrixCreator {
 
 
     /**
-     * Creates vectors corresponding to elements in T matrix, for example B, AB, etc
+     * Creates vectors corresponding to elements in controlAffect matrix, for example B, AB, etc
      */
 
-    @NotNull
     private List<RealVector> getVectors(int ti) {
+        return IntStream.range(0, modelData.horizon())
+                .mapToObj(ei -> getVector(ti, ei))
+                .toList();
+    }
+
+    private RealVector getVector(int ti, int ei) {
         var a = MatrixUtils.createRealMatrix(modelData.matrixA());
         var b = MatrixUtils.createRealVector(modelData.vectorB());
-        List<RealVector> vectors = Lists.newArrayList();
-        for (int ei = 0; ei < modelData.horizon(); ei++) {
-            RealVector v = ti - ei < 0
-                    ? createZeroVector(modelData.nStates())
-                    : a.power(ti - ei).operate(b);
-            vectors.add(v);
-        }
-        return vectors;
+        return ti - ei < 0
+                ? createZeroVector(modelData.nStates())
+                : a.power(ti - ei).operate(b);
     }
 
     private RealMatrix matrixH() {

@@ -43,7 +43,7 @@ class TestResponseCalculatorLunarLander {
         System.out.println("response = " + response);
 
         double force = 1;
-        double dSpd = 1d / MASS * force;
+        double dSpd = MASS*force;
         double pos0 = 0d;
         double spd0 = dSpd;
         double pos1 = pos0 + spd0;

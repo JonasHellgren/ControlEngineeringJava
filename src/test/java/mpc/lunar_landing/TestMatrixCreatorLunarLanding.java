@@ -24,28 +24,28 @@ public class TestMatrixCreatorLunarLanding {
 
     @Test
     void whenMatrixS_thenCorrect() {
-        var s=mpcMatrices.S();
+        var s=mpcMatrices.stateImpact();
         assertEquals(model.nStates() * model.horizon(),properties(s).nRows() );
         assertEquals(model.nStates(),properties(s).nColumns() );
     }
 
     @Test
     void whenMatrixT_thenCorrect() {
-        RealMatrix t = mpcMatrices.T();
+        RealMatrix t = mpcMatrices.controlAffect();
         assertEquals(model.nStates() * model.horizon(), properties(t).nRows());
         assertEquals(model.horizon(), properties(t).nColumns());
     }
 
     @Test
     void whenMatrixH_thenCorrect() {
-        var h = mpcMatrices.H();
+        var h = mpcMatrices.hessian();
         assertEquals(model.horizon(), properties(h).nRows());
         assertEquals(model.horizon(), properties(h).nColumns());
     }
 
     @Test
     void whenMatrixQ_thenCorrect() {
-        var q = mpcMatrices.Q();
+        var q = mpcMatrices.trackingPenalty();
         assertEquals(model.horizon() * model.nStates(), properties(q).nRows());
         assertEquals(model.horizon() * model.nStates(), properties(q).nColumns());
     }

@@ -33,26 +33,26 @@ class TestMpcMatrixCreator1DIntegrator {
     @Test
     void whenMatrixS_thenCorrect() {
         var aStacked = MatrixStacking.stackVertically(List.of(a, a));
-        assertEquals(aStacked, mpcMatrices.S());
+        assertEquals(aStacked, mpcMatrices.stateImpact());
     }
 
     @Test
     void whenMatrixT_thenCorrect() {
-        RealMatrix t = mpcMatrices.T();
+        RealMatrix t = mpcMatrices.controlAffect();
         assertEquals(model.nStates() * model.horizon(), properties(t).nRows());
         assertEquals(model.horizon(), properties(t).nColumns());
     }
 
     @Test
     void whenMatrixH_thenCorrect() {
-        var h = mpcMatrices.H();
+        var h = mpcMatrices.hessian();
         assertEquals(model.horizon(), properties(h).nRows());
         assertEquals(model.horizon(), properties(h).nColumns());
     }
 
     @Test
     void whenMatrixQ_thenCorrect() {
-        var q = mpcMatrices.Q();
+        var q = mpcMatrices.trackingPenalty();
         assertEquals(model.horizon() * model.nStates(), properties(q).nRows());
         assertEquals(model.horizon() * model.nStates(), properties(q).nColumns());
     }
